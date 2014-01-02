@@ -29,24 +29,25 @@
       <% if user_signed_in? %>
       <ul class="right">
         <li class="divider"></li>
-        <li><%= link_to "Dashboard", dashboard_index_path  %></li>
+        <li><%= link_to dashboard_index_path do %><i class="fa fa-calendar fa-lg"></i>&nbsp;&nbsp;Dashboard<% end %></li>
         <li class="divider"></li>
-        <li><%= link_to "Target Savings", savings_index_path  %></li>
+        <li><%= link_to savings_index_path do %><i class="fa fa-shopping-cart fa-lg"></i>&nbsp;&nbsp;Target Savings<% end %></li>
         <li class="divider"></li>
         <li class="has-dropdown">
           <%= link_to "#{current_user.username} (#{current_user.email})", edit_user_registration_path %>
           <ul class="dropdown">
-            <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete  %></li>
+            <li><%= link_to edit_user_registration_path do %><i class="fa fa-user fa-lg"></i>&nbsp;&nbsp;Edit profile<% end %></li>
+            <li><%= link_to destroy_user_session_path, method: :delete do %><i class="fa fa-sign-out fa-lg"></i>&nbsp;&nbsp;Logout<% end %></li>
           </ul>
         </li>
+        <li class="gravatar_image"><%= image_tag current_user.gravatar_url %></li>
       </ul>
       <% else %>
       <ul class="right">
         <li class="divider"></li>
-        <li><%= link_to "Sign up", new_user_registration_path  %></li>
+        <li><%= link_to new_user_registration_path do %><i class="fa fa-user fa-lg"></i>&nbsp;&nbsp;Sign up<% end %></li>
         <li class="divider"></li>
-        <li><%= link_to "Login", new_user_session_path  %></li>
+        <li><%= link_to new_user_session_path do %><i class="fa fa-sign-in fa-lg"></i>&nbsp;&nbsp;Login<% end %></li>
         <li class="divider"></li>
         <li class="has-form"><a href="#" class="small button">How To Use</a></li>
       </ul>
@@ -70,18 +71,18 @@
       <ul class="off-canvas-list">
         <li><label>CELENG.IN</label></li>
         <li><%= link_to root_path do %><i class="fa fa-home fa-lg"></i>&nbsp;&nbsp;Home<% end %></li>
-        <li><%= link_to dashboard_index_path do %><i class="fa fa-calendar fa-fw"></i>&nbsp;&nbsp;Dashboard<% end %></li>
-        <li><%= link_to savings_index_path do %><i class="fa fa-shopping-cart fa-fw"></i>&nbsp;&nbsp;Target Savings<% end %></li>
+        <li><%= link_to dashboard_index_path do %><i class="fa fa-calendar fa-lg"></i>&nbsp;&nbsp;Dashboard<% end %></li>
+        <li><%= link_to savings_index_path do %><i class="fa fa-shopping-cart fa-lg"></i>&nbsp;&nbsp;Target Savings<% end %></li>
         <li><label><%= "#{current_user.username}" %></label></li>
-        <li><%= link_to edit_user_registration_path do %><i class="fa fa-user fa-fw"></i>&nbsp;&nbsp;Edit profile<% end %></li>
-        <li><%= link_to destroy_user_session_path, method: :delete do %><i class="fa fa-sign-out fa-fw"></i>&nbsp;&nbsp;Logout<% end %></li>
+        <li><%= link_to edit_user_registration_path do %><i class="fa fa-user fa-lg"></i>&nbsp;&nbsp;Edit profile<% end %></li>
+        <li><%= link_to destroy_user_session_path, method: :delete do %><i class="fa fa-sign-out fa-lg"></i>&nbsp;&nbsp;Logout<% end %></li>
       </ul>
       <% else %>
       <ul class="off-canvas-list">
         <li><label>CELENG.IN</label></li>
         <li><%= link_to root_path do %><i class="fa fa-home fa-lg"></i>&nbsp;&nbsp;Home<% end %></li>
-        <li><%= link_to new_user_session_path do %><i class="fa fa-sign-in fa-fw"></i>&nbsp;&nbsp;Login<% end %></li>
-        <li><%= link_to new_user_registration_path do %><i class="fa fa-user fa-fw"></i>&nbsp;&nbsp;Sign up<% end %></li>
+        <li><%= link_to new_user_session_path do %><i class="fa fa-sign-in fa-lg"></i>&nbsp;&nbsp;Login<% end %></li>
+        <li><%= link_to new_user_registration_path do %><i class="fa fa-user fa-lg"></i>&nbsp;&nbsp;Sign up<% end %></li>
       </ul>
       <% end %>
   </aside>

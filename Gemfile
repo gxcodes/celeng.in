@@ -15,5 +15,6 @@ gem 'devise'
 gem 'simple_calendar', :path => 'vendor/gems/simple_calendar-0.1.9'
 gem 'backstretch-rails'
 gem 'font-awesome-rails'
+gem 'gravtastic'
 
 gem 'debugger', group: [:development, :test]
