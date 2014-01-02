@@ -1,16 +1,6 @@
 <div class="row full">
   <div class="large-3 medium-4 columns">
-    <div class="sidebar panel">
-      <h4>In a Glance</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat.</p>
-      <h4>Target Savings</h4>
-      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
+  <%= render 'shared/sidebar_panel' %>
   </div>
 
   <div class="large-9 medium-8 columns">
@@ -23,6 +13,6 @@
 <div id="myModal" class="reveal-modal small" data-reveal>
   <h2>What do you want to add?</h2>
     <p class="lead">Pick one of the transaction and enter the amount:</p>
-    <%= render 'dashboard/transaction_form' %>
+    <%= render 'shared/transaction_form' %>
   <a class="close-reveal-modal">&#215;</a>
 </div>

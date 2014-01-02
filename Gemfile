@@ -14,5 +14,6 @@ end
 gem 'foundation-rails'
 gem 'devise'
 gem 'simple_calendar', :path => 'vendor/gems/simple_calendar-0.1.9'
+gem 'backstretch-rails'
 
 gem 'debugger', group: [:development, :test]

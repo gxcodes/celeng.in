@@ -1,0 +1,42 @@
+<!-- <form> -->
+<%= form_for(@event) do |f| %>
+  <div class="row">
+    <div class="small-8 small-offset-4">
+      <div class="row">
+        <div class="small-2 columns">
+          <label for="date" class="right inline">Date: </label>
+        </div>
+        <div class="small-10 columns">
+          <%= date_field_tag 'date' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <fieldset>
+    <legend>Transaction : </legend>
+
+    <%= radio_button_tag 'transaksi', 'add_income' %><%= label_tag 'transaksi_add_income', 'Add Income' %>
+    <%= radio_button_tag 'transaksi', 'add_outcome' %><%= label_tag 'transaksi_add_outcome', 'Add Outcome' %>
+    <%= radio_button_tag 'transaksi', 'add_saving' %><%= label_tag 'transaksi_add_saving', 'Add Saving' %>
+
+    <br />
+    <!-- 
+      <%#= select_tag "savings", "<option>This Saving</option><option>That Saving</option><option>My Saving</option>".html_safe %>
+     -->
+    <div id="select_saving" class="show">
+      <%= collection_select(:target, :target_savings, TargetSaving.all, :id, :name) %>
+    </div>
+    <div class="row collapse">
+      <div class="small-3 large-2 columns">
+        <span class="prefix">Rp </span>
+      </div>
+      <div class="small-9 large-10 columns">
+        <%= number_field_tag 'amount', nil, placeholder: 'Enter amount...' %>
+      </div>
+    </div>
+  </fieldset>
+
+  <%= submit_tag "Submit", data: { disable_with: "Mohon tunggu..." }, class: "button small" %>
+  <% end %> 
+<!-- </form> -->

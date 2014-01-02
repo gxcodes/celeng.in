@@ -13,7 +13,10 @@
 
   <body>
 
-  <nav class="top-bar" data-topbar>
+  <div class="off-canvas-wrap">
+  <div class="inner-wrap">
+
+  <nav class="top-bar hide-for-small" data-topbar>
     <ul class="title-area">
       <li class="name">
         <h1><%= link_to "CELENG.IN", root_path  %></h1>
@@ -52,8 +55,38 @@
       <!-- Left Nav Section -->
       <!--     (Empty)      -->
     </section>
-  </nav><br />
+  </nav>
 
+  <nav class="tab-bar show-for-small">
+    <a class="left-off-canvas-toggle menu-icon">
+      <span>CELENG.IN</span>
+    </a>
+  </nav>
+
+  <!-- Off Canvas Menu -->
+  <aside class="left-off-canvas-menu">
+      <!-- whatever you want goes here -->
+      <% if user_signed_in? %>
+      <ul class="off-canvas-list">
+        <li><label>CELENG.IN</label></li>
+        <li><%= link_to "Home", root_path  %></li>
+        <li><%= link_to "Dashboard", dashboard_index_path  %></li>
+        <li><%= link_to "Target Savings", savings_index_path  %></li>
+        <li><label><%= "#{current_user.username}" %></label></li>
+        <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete  %></li>
+      </ul>
+      <% else %>
+      <ul class="off-canvas-list">
+        <li><label>CELENG.IN</label></li>
+        <li><%= link_to "Home", root_path  %></li>
+        <li><%= link_to "Login", new_user_session_path  %></li>
+        <li><%= link_to "Sign up", new_user_registration_path  %></li>
+      </ul>
+      <% end %>
+  </aside>
+
+  <br />
   <div class="row">
     <div class="large-12 column">
       <% if notice %>
@@ -71,6 +104,11 @@
 
     <%= yield %>
     <%= javascript_include_tag "application" %>
+
+  <!-- close the off-canvas menu -->
+  <a class="exit-off-canvas"></a>
+  </div>
+  </div>
 
   </body>
 </html>
