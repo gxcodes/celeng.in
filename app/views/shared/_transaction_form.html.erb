@@ -25,7 +25,7 @@
       <%#= select_tag "savings", "<option>This Saving</option><option>That Saving</option><option>My Saving</option>".html_safe %>
      -->
     <div id="select_saving" class="show">
-      <%= collection_select(:target, :target_savings, TargetSaving.all, :id, :name) %>
+      <%= collection_select(:target, :target_savings, @target_savings, :id, :name) %>
     </div>
     <div class="row collapse">
       <div class="small-3 large-2 columns">

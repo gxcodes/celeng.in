@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def create
-    @event = Event.add params
+    @event = Event.add params, current_user
     debugger
     # @comment = Comment.new(comment_params)
     # @book = Book.find_by_id(params[:book_id])
