@@ -4,5 +4,6 @@ class DashboardController < ApplicationController
   def index
     @events = Event.all
     @event  = Event.new
+    @target_savings = TargetSaving.all
   end
 end

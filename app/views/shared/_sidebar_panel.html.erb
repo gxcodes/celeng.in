@@ -16,17 +16,16 @@
       <div class="panel">
         <h5>Rp 7.850.000,-</h5>
       </div>
-
+      <% if @target_savings != [] %>
       <h4>Target Savings</h4>
-      <p>IF ada target savings, tampilkan:</p>
       <ul>
-        <li><a href="#!">Target Savings 1</a></li>
-        <li><a href="#!">Target Savings 2</a></li>
-        <li><a href="#!">Target Savings 3</a></li>
+        <% @target_savings.each do |target_saving| %>
+        <li><a href="#!"><%= target_saving.name %></a></li>
+        <% end %>
       </ul>
-      <p>ELSE:</p>
+      <% else %>
       <p>You don't have any target savings! Why don't you make one now..</p>
-
+      <% end %>
       <a class="small success button"><i class="fa fa-plus-circle fa-lg"></i>&nbsp;&nbsp;Add Target Saving</a>
       <a class="small button"><i class="fa fa-tasks fa-lg"></i>&nbsp;&nbsp;See Target Saving</a>
     </div>
