@@ -17,4 +17,4 @@
 .row.full {min-width:100% !important;}
 .panel {background: rgba(242,242,242,0.75) !important;}
 
-.gravatar_image img {margin: 5px 5px 0 0;}
+.gravatar_image img {margin: 0 0 2px; float: none; display: inline;}

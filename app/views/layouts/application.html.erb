@@ -33,14 +33,19 @@
         <li class="divider"></li>
         <li><%= link_to savings_index_path do %><i class="fa fa-shopping-cart fa-lg"></i>&nbsp;&nbsp;Target Savings<% end %></li>
         <li class="divider"></li>
-        <li class="has-dropdown">
-          <%= link_to "#{current_user.username} (#{current_user.email})", edit_user_registration_path %>
+        <li><%= link_to "#{current_user.username} (#{current_user.email})", edit_user_registration_path %></li>
+        <li class="has-dropdown gravatar_image">
+          
+          <%= link_to edit_user_registration_path do %>
+            <%= image_tag current_user.gravatar_url %>
+          <% end %>
+          
           <ul class="dropdown">
             <li><%= link_to edit_user_registration_path do %><i class="fa fa-user fa-lg"></i>&nbsp;&nbsp;Edit profile<% end %></li>
             <li><%= link_to destroy_user_session_path, method: :delete do %><i class="fa fa-sign-out fa-lg"></i>&nbsp;&nbsp;Logout<% end %></li>
           </ul>
         </li>
-        <li class="gravatar_image"><%= image_tag current_user.gravatar_url %></li>
+        <li class=""></li>
       </ul>
       <% else %>
       <ul class="right">

@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   include Gravtastic
   gravtastic :default => "mm",
              :filetype => :jpg,
-             :size => 35
+             :size => 30
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
