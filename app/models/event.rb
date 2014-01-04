@@ -11,7 +11,7 @@ class Event < ActiveRecord::Base
       @event.outcome  = param[:amount].to_i
     end
     @event.start_time = param[:date]
-    #@event.name = param[:name]
+    @event.name = param[:name]
     @event.user = current_user
     @event
   end
