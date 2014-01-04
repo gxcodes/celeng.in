@@ -26,6 +26,15 @@
       <% else %>
       <p>You don't have any target savings! Why don't you make one now..</p>
       <% end %>
-      <a class="small success button"><i class="fa fa-plus-circle fa-lg"></i>&nbsp;&nbsp;Add Target Saving</a>
-      <a class="small button"><i class="fa fa-tasks fa-lg"></i>&nbsp;&nbsp;See Target Saving</a>
+      <a class="small success button" data-reveal-id="savingModal"><i class="fa fa-plus-circle fa-lg"></i>&nbsp;&nbsp;Add Target Saving</a>
+      <%= link_to savings_index_path, class: 'small button' do %><i class="fa fa-tasks fa-lg"></i>&nbsp;&nbsp;See Target Saving<% end %>
     </div>
+
+
+<!-- Modal for target savings -->
+<div id="savingModal" class="reveal-modal small" data-reveal>
+  <h2>Add Target Saving</h2>
+    <p class="lead">Define your target saving here:</p>
+    <%= render 'shared/tsavings_form' %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
