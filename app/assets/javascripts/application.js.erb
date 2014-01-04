@@ -25,7 +25,5 @@ $( document ).ready( function(){
     var date = $( this ).attr( "data-date-iso" );
     $('input#date').val(date);
   });
-
   $.get( "/dashboard/index", { name: "John", time: "2pm" } );
-
 });
