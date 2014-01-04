@@ -11,6 +11,6 @@ class DashboardController < ApplicationController
     #   format.js { @tes = params['name'] }
     # end
     # debugger
-    # @tes = params['name']
+    #@tes = params['name']
   end
 end
