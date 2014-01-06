@@ -30,10 +30,10 @@
 
     <div class="row">
       <div class="small-3 columns">
-        <label for="date" class="right inline">Due Date: </label>
+        <label for="deadline" class="right inline">Due Date: </label>
       </div>
       <div class="small-9 columns">
-        <%= date_field_tag 'deadline' %>
+        <%= text_field_tag 'deadline', nil, class: 'datepicker' %>
       </div>
     </div>
 
