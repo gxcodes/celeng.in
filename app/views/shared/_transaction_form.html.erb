@@ -4,18 +4,6 @@
     <div class="small-8 small-offset-4">
       <div class="row">
         <div class="small-2 columns">
-          <label for="name" class="right inline">Name: </label>
-        </div>
-        <div class="small-10 columns">
-          <%= text_field_tag 'name' %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-8 small-offset-4">
-      <div class="row">
-        <div class="small-2 columns">
           <label for="date" class="right inline">Date: </label>
         </div>
         <div class="small-10 columns">
@@ -38,6 +26,7 @@
     <div id="select_saving" class="show">
       <%= collection_select(:target, :target_savings, @target_savings, :id, :name) %>
     </div>
+
     <div class="row collapse">
       <div class="small-3 large-2 columns">
         <span class="prefix">Rp </span>
@@ -46,6 +35,10 @@
         <%= number_field_tag 'amount', nil, placeholder: 'Enter amount...' %>
       </div>
     </div>
+
+    <label for="description">Description: </label>
+    <%= text_area_tag 'description' %>
+
   </fieldset>
 
   <%= submit_tag "Submit", data: { disable_with: "Processing..." }, class: "button small" %>

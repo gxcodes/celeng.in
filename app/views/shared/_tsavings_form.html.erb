@@ -17,7 +17,6 @@
         <label for="amount_target" class="right inline">Amount: </label>
       </div>
       <div class="small-9 columns">
-
         <div class="row collapse">
           <div class="small-3 large-2 columns">
             <span class="prefix">Rp </span>
@@ -26,7 +25,6 @@
             <%= number_field_tag 'amount_target', nil, placeholder: 'Enter amount...' %>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -38,6 +36,16 @@
         <%= date_field_tag 'deadline' %>
       </div>
     </div>
+
+    <div class="row">
+      <div class="small-3 columns">
+        <label for="description" class="right inline">Description: </label>
+      </div>
+      <div class="small-9 columns">
+        <%= text_area_tag 'description' %>
+      </div>
+    </div>
+
 
   </fieldset>
 

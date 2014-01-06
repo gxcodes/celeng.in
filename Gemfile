@@ -16,5 +16,6 @@ gem 'simple_calendar', :path => 'vendor/gems/simple_calendar-0.1.9'
 gem 'backstretch-rails'
 gem 'font-awesome-rails'
 gem 'gravtastic'
+gem 'jquery-ui-rails'
 
 gem 'debugger', group: [:development, :test]
