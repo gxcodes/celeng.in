@@ -18,6 +18,7 @@ gem 'font-awesome-rails'
 gem 'gravtastic'
 gem 'jquery-ui-rails'
 gem 'carrierwave'
+gem "mini_magick"
 
 gem 'debugger', group: [:development, :test]
 

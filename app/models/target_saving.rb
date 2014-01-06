@@ -4,11 +4,14 @@ class TargetSaving < ActiveRecord::Base
   mount_uploader :images, ImagesUploader
   
   def self.add_target params, current_user
-    target_saving = TargetSaving.new
-    target_saving.name = params['name']
+    target_saving               = TargetSaving.new
+    target_saving.name          = params['name']
     target_saving.amount_target = params['amount_target']
-    target_saving.deadline = params['deadline']
-    target_saving.user = current_user
+    target_saving.deadline      = params['deadline']
+    target_saving.user          = current_user
+    target_saving.url           = params['url']
+    target_saving.description   = params['description']
+    target_saving.images        = params['images']
     target_saving
   end
 end

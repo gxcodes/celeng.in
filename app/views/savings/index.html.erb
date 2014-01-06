@@ -10,12 +10,14 @@
           <td>Target Name </td>
           <td>Deadline </td>
           <td>Amount Target</td>
+          <td>Picture</td>
         </tr>
         <% @target_savings.each do |target_saving| %>
         <tr>
           <td><%= target_saving.name %></td>
           <td><%= target_saving.deadline %></td>
           <td><%= target_saving.amount_target %></td>
+          <td><%= image_tag target_saving.images, size: :thumb %></td>
         </tr>
         <% end %>
       </table>

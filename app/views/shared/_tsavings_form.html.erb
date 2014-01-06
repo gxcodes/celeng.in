@@ -1,5 +1,4 @@
-<%= form_for(@target_saving) do |f| %>
-
+<%= form_for @target_saving, :html => {:multipart => true} do |f| %>
   <fieldset>
     <legend>Target Saving: </legend>
 
@@ -51,8 +50,8 @@
         <label for="description" class="right inline">Picture: </label>
       </div>
       <div class="small-9 columns">
-        <%= f.file_field :images %>
-        <%= f.hidden_field :images_cache %>
+        <%= file_field_tag :images %>
+        <%= hidden_field_tag  :images_cache %>
       </div>
     </div>
 
