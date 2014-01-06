@@ -6,4 +6,5 @@ Celengin::Application.routes.draw do
   get   "dashboard/index"
   resources :examples#, :events
   post  "events" => "events#create"
+  post  "target_savings" => "savings#create"
 end
