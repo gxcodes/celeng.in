@@ -2,19 +2,22 @@
       <h4>This Month</h4>
       <table>
         <tr>
-          <td>Income</td><td>Rp <%= @total_income %>,-</td>
+          <td>Income</td><td><%= number_to_currency(@total_income, :unit => "Rp ") %></td>
         </tr>
         <tr>
-          <td>Expenses</td><td>Rp <%= @total_expenses %>,-</td>
+          <td>Expenses</td><td><%= number_to_currency(@total_expenses, :unit => "Rp ") %></td>
         </tr>
         <tr>
-          <td>Net Income</td><td>Rp <%= @total_month %>,-</td>
+          <td>Net Income</td><td><%= number_to_currency(@total_month, :unit => "Rp ") %></td>
         </tr>
       </table>
 
+      <h4>Residu</h4>
+      <%= number_to_currency(@residue, :unit => "Rp ") %>
+
       <h4>Net Worth</h4>
       <div class="panel">
-        <h5>Rp <%= @total %>,-</h5>
+        <h5><%= number_to_currency(@total, :unit => "Rp ") %></h5>
       </div>
       <% if @target_savings != [] %>
       <h4>Target Savings</h4>
