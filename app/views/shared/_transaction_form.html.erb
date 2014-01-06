@@ -15,9 +15,9 @@
   <fieldset>
     <legend>Transaction : </legend>
 
-    <%= radio_button_tag 'transaksi', 'add_income' %><%= label_tag 'transaksi_add_income', 'Add Income' %>
-    <%= radio_button_tag 'transaksi', 'add_outcome' %><%= label_tag 'transaksi_add_outcome', 'Add Outcome' %>
-    <%= radio_button_tag 'transaksi', 'add_saving' %><%= label_tag 'transaksi_add_saving', 'Add Saving' %>
+    <%= radio_button_tag 'transaksi', 'add_income', false, class: 'transaction-type' %><%= label_tag 'transaksi_add_income', 'Add Income' %>
+    <%= radio_button_tag 'transaksi', 'add_outcome', false, class: 'transaction-type' %><%= label_tag 'transaksi_add_outcome', 'Add Outcome' %>
+    <%= radio_button_tag 'transaksi', 'add_saving', false, class: 'transaction-type' %><%= label_tag 'transaksi_add_saving', 'Add Saving' %>
 
     <br />
     <!-- 

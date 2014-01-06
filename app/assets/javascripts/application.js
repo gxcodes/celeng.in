@@ -26,9 +26,20 @@ $(function() {
 $( document ).ready( function(){
   $.backstretch("<%= asset_path('cover.jpg') %>");
 
-  $( "td" ).click( function() {
+  $("td" ).click( function() {
     var date = $( this ).attr( "data-date-iso" );
     $('input#date').val(date);
   });
-  $.get( "/dashboard/index", { name: "John", time: "2pm" } );
+
+  $("input.transaction-type").on("click", function(){
+    if($(this).attr('id') == 'transaksi_add_saving'){
+      $( "#target_target_savings" ).show('fast');
+    }
+    if($(this).attr('id') == 'transaksi_add_outcome' || $(this).attr('id') == 'transaksi_add_income'){
+      $( "#target_target_savings" ).hide('fast');
+    }
+  });
+//   $( "#clickme" ).click(function() {
+    
+// });
 });
