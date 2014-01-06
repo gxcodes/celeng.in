@@ -21,4 +21,12 @@ class Event < ActiveRecord::Base
     @event.description  = param['description']
     @event
   end
+  def self.check_balance event
+    @before_saving = event.target_saving.amount_target - event.target_saving.events.sum('savings')
+    if @before_saving >= event.savings || event.savings == 0
+      true
+    else
+      false
+    end
+  end
 end
