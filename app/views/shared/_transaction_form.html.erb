@@ -23,7 +23,7 @@
     <!-- 
       <%#= select_tag "savings", "<option>This Saving</option><option>That Saving</option><option>My Saving</option>".html_safe %>
      -->
-    <div id="select_saving" class="show">
+    <div id="select_saving" class="hide">
       <%= collection_select(:target, :target_savings, @target_savings, :id, :name) %>
     </div>
 

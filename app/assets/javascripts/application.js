@@ -33,10 +33,10 @@ $( document ).ready( function(){
 
   $("input.transaction-type").on("click", function(){
     if($(this).attr('id') == 'transaksi_add_saving'){
-      $( "#target_target_savings" ).show('fast');
+      $( "#select_saving" ).show('fast');
     }
     if($(this).attr('id') == 'transaksi_add_outcome' || $(this).attr('id') == 'transaksi_add_income'){
-      $( "#target_target_savings" ).hide('fast');
+      $( "#select_saving" ).hide('fast');
     }
   });
 //   $( "#clickme" ).click(function() {
