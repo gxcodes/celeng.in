@@ -24,11 +24,15 @@
       
       <% if @target_savings != [] %>
       <h4>Target Savings</h4>
-      <ul>
         <% @target_savings.each do |target_saving| %>
-        <li><a href="#!"><%= target_saving.name %> target<%= target_saving.amount_target %> jumlah sekarang<%= target_saving.jumlah %></a></li>
+          <div class="panel">
+            <a href="#!"><%= target_saving.name %></a>
+              <div class="progress success round">
+                <span class="meter" style="width: <%= target_saving.jumlah.to_f/target_saving.amount_target.to_f*100 %>%"></span>
+                <span class="target_amount">(<%= number_to_currency(target_saving.jumlah, :unit => "Rp ") %>/<%= number_to_currency(target_saving.amount_target, :unit => "Rp ") %>)</span>
+              </div>
+          </div>
         <% end %>
-      </ul>
       <% else %>
       <p>You don't have any target savings! Why don't you make one now..</p>
       <% end %>
