@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/radar/by_star
+  revision: 453f100644d3b0e8ef00c5666ae817e8752bc268
+  specs:
+    by_star (2.1.0.beta2)
+      activerecord
+      chronic
+
 PATH
   remote: vendor/gems/simple_calendar-0.1.9
   specs:
@@ -38,6 +46,7 @@ GEM
     bcrypt-ruby (3.1.2)
     bcrypt-ruby (3.1.2-x86-mingw32)
     builder (3.1.4)
+    chronic (0.10.2)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -143,6 +152,7 @@ PLATFORMS
 
 DEPENDENCIES
   backstretch-rails
+  by_star!
   coffee-rails (~> 4.0.0)
   debugger
   devise

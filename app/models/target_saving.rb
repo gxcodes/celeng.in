@@ -1,7 +1,8 @@
 class TargetSaving < ActiveRecord::Base
   belongs_to :user
   has_many :events
-
+  by_star_field :deadline
+  
   def self.add_target params, current_user
     target_saving = TargetSaving.new
     target_saving.name = params['name']
