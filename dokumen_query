@@ -1,0 +1,3 @@
+SELECT target_savings.name, target_savings.amount_target, events.name, events.description, events.savings,SUM(events.savings) FROM target_savings INNER JOIN events ON target_savings.id = events.target_saving_id WHERE target_savings.user_id = 1 GROUP BY target_savings.name;
+
+user.target_savings.joins(:events).group('target_savings.name').select("target_savings.name, target_savings.amount_target, sum(events.savings) as jumlah").first.jumlah

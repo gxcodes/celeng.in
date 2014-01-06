@@ -23,7 +23,7 @@
       <h4>Target Savings</h4>
       <ul>
         <% @target_savings.each do |target_saving| %>
-        <li><a href="#!"><%= target_saving.name %></a></li>
+        <li><a href="#!"><%= target_saving.name %> target<%= target_saving.amount_target %> jumlah sekarang<%= target_saving.jumlah %></a></li>
         <% end %>
       </ul>
       <% else %>

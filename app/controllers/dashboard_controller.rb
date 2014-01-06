@@ -5,7 +5,7 @@ class DashboardController < ApplicationController
     @events             = current_user.events
     @event              = Event.new
     @target_saving      = TargetSaving.new
-    @target_savings     = current_user.target_savings
+    @target_savings     = current_user.target_savings.joins(:events).group('target_savings.name').select("target_savings.name, target_savings.amount_target, sum(events.savings) as jumlah")
     @total_income_all   = current_user.events.sum('income')
     @total_saving_all   = current_user.events.sum('savings')
     @total_outcome_all  = current_user.events.sum('outcome')
