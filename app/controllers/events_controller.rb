@@ -7,7 +7,13 @@ class EventsController < ApplicationController
   def create
     @event = Event.add params, current_user
     respond_to do |format|
-      if Event.check_balance(@event)
+      if params[:transaksi] == "add_outcome" || params[:transaksi] == "add_income"
+        if @event.save
+          format.html { redirect_to dashboard_index_path, notice: 'successfully' }
+        else
+          format.html { render action: "new" }
+        end
+      elsif Event.check_balance(@event)
         if @event.save
           format.html { redirect_to dashboard_index_path, notice: 'successfully' }
         else
