@@ -4,28 +4,37 @@
     <legend>Target Saving: </legend>
 
     <div class="row">
-      <div class="small-2 columns">
-        <label for="date" class="right inline">Name: </label>
+      <div class="small-3 columns">
+        <label for="name" class="right inline">Name: </label>
       </div>
-      <div class="small-10 columns">
+      <div class="small-9 columns">
         <%= text_field_tag 'name' %>
       </div>
     </div>
 
-    <div class="row collapse">
-      <div class="small-3 large-2 columns">
-        <span class="prefix">Rp </span>
+    <div class="row">
+      <div class="small-3 columns">
+        <label for="amount_target" class="right inline">Amount: </label>
       </div>
-      <div class="small-9 large-10 columns">
-        <%= number_field_tag 'amount_target', nil, placeholder: 'Enter amount...' %>
+      <div class="small-9 columns">
+
+        <div class="row collapse">
+          <div class="small-3 large-2 columns">
+            <span class="prefix">Rp </span>
+          </div>
+          <div class="small-9 large-10 columns">
+            <%= number_field_tag 'amount_target', nil, placeholder: 'Enter amount...' %>
+          </div>
+        </div>
+
       </div>
     </div>
 
     <div class="row">
-      <div class="small-2 columns">
+      <div class="small-3 columns">
         <label for="date" class="right inline">Due Date: </label>
       </div>
-      <div class="small-10 columns">
+      <div class="small-9 columns">
         <%= date_field_tag 'deadline' %>
       </div>
     </div>
