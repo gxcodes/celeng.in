@@ -1,20 +1,19 @@
 class EventsController < ApplicationController
+
+  def new
+    @event = Event.new
+  end
+
   def create
     @event = Event.add params, current_user
-    debugger
-    # @comment = Comment.new(comment_params)
-    # @book = Book.find_by_id(params[:book_id])
-    # @comment.user = current_user
-    # respond_to do |format|
-    #   if @comment.save
-    #     @book.add_comment @comment
-    #     format.html { redirect_to book_path(@book) }
-    #     #format.json { render json: @book, status: :created, location: @book }
-    #     #format.js { return render status: 200 }
-    #   else
-    #     #format.html { render action: "new" }
-    #     #format.json { render json: @book.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    # debugger
+    respond_to do |format|
+      if @event.save
+        format.html { redirect_to dashboard_index_path, notice: 'successfully' }
+        
+      else
+        format.html { render action: "new" }
+      end
+    end
   end
 end
