@@ -17,6 +17,7 @@ gem 'backstretch-rails'
 gem 'font-awesome-rails'
 gem 'gravtastic'
 gem 'jquery-ui-rails'
+gem 'carrierwave'
 
 gem 'debugger', group: [:development, :test]
 

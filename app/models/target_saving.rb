@@ -2,6 +2,8 @@ class TargetSaving < ActiveRecord::Base
   belongs_to :user
   has_many :events
   by_star_field :deadline
+
+  mount_uploader :images, ImagesUploader
   
   def self.add_target params, current_user
     target_saving = TargetSaving.new
