@@ -1,7 +1,7 @@
 class TargetSaving < ActiveRecord::Base
   belongs_to :user
   has_many :events
-  
+  mount_uploader :images, ImagesUploader
   
   def self.add_target params, current_user
     target_saving = TargetSaving.new

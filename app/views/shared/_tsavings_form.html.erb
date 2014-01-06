@@ -46,6 +46,16 @@
       </div>
     </div>
 
+    <div class="row">
+      <div class="small-3 columns">
+        <label for="description" class="right inline">Picture: </label>
+      </div>
+      <div class="small-9 columns">
+        <%= f.file_field :images %>
+        <%= f.hidden_field :images_cache %>
+      </div>
+    </div>
+
 
   </fieldset>
 
