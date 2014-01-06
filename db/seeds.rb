@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-#@user = User.create username: 'admin', email:'admin@admin.com', password: 'admin'
-TargetSaving.create name:"Buy Book", price:10000, deadline:Time.now
-TargetSaving.create name:"Buy Pencil", price:10000, deadline:Time.now
-TargetSaving.create name:"Buy Pen", price:10000, deadline:Time.now
+@user = User.first#= User.create username: 'admin', email:'admin@admin.com', password: 'admin'
+TargetSaving.create name:"Buy Book", price:10000, deadline:Time.now, user: @user
+TargetSaving.create name:"Buy Pencil", price:10000, deadline:Time.now, user: @user
+TargetSaving.create name:"Buy Pen", price:10000, deadline:Time.now, user: @user

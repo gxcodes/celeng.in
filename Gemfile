@@ -19,3 +19,5 @@ gem 'gravtastic'
 gem 'jquery-ui-rails'
 
 gem 'debugger', group: [:development, :test]
+
+gem 'by_star', :git => "git://github.com/radar/by_star"  #gem for find by_month, by_year, dll => https://github.com/radar/by_star
