@@ -10,7 +10,6 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event.save
         format.html { redirect_to dashboard_index_path, notice: 'successfully' }
-        
       else
         format.html { render action: "new" }
       end
