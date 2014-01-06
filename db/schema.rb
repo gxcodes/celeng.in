@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140106041013) do
+ActiveRecord::Schema.define(version: 20140106063730) do
 
   create_table "events", force: true do |t|
     t.string   "name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140106041013) do
     t.integer  "target_saving_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "savings",          default: 0
   end
 
   create_table "target_savings", force: true do |t|
