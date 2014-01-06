@@ -12,13 +12,16 @@
         </tr>
       </table>
 
-      <h4>Residu</h4>
-      <%= number_to_currency(@residue, :unit => "Rp ") %>
+      <h4>Residue</h4>
+      <div class="panel">
+        <h5><%= number_to_currency(@residue, :unit => "Rp ") %></h5>
+      </div>
 
       <h4>Net Worth</h4>
       <div class="panel">
         <h5><%= number_to_currency(@total, :unit => "Rp ") %></h5>
       </div>
+      
       <% if @target_savings != [] %>
       <h4>Target Savings</h4>
       <ul>
