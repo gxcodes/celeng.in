@@ -24,7 +24,7 @@ $(function() {
 });
 
 $( document ).ready( function(){
-  $.backstretch("<%= asset_path('cover.jpg') %>");
+  $.backstretch("/assets/cover.jpg");
 
   $("td" ).click( function() {
     var date = $( this ).attr( "data-date-iso" );
