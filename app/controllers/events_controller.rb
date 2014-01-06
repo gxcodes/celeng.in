@@ -6,7 +6,6 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.add params, current_user
-    # debugger
     respond_to do |format|
       if @event.save
         format.html { redirect_to dashboard_index_path, notice: 'successfully' }

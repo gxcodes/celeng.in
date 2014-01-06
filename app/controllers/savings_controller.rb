@@ -3,7 +3,7 @@ class SavingsController < ApplicationController
   before_action :set_target_savings, only: [:show, :edit, :update, :destroy]
 
   def index
-    @target_savings     = current_user.target_savings
+    @target_savings     = current_user.target_savings.joins(:events).group('target_savings.name').select("target_savings.*, sum(events.savings) as jumlah")
     @target_saving      = TargetSaving.new
     @total_income_all   = current_user.events.sum('income')
     @total_saving_all   = current_user.events.sum('savings')
