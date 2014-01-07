@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.datepicker
+//= require bootstrap-datepicker
 //= require foundation
 //= require 'jquery.backstretch'
 //= require_tree .
@@ -20,7 +20,12 @@
 $(function(){ $(document).foundation(); });
 
 $(function() {
-  $('.datepicker').datepicker({dateFormat: 'yy-mm-dd'});
+  $('.datepicker').datepicker({
+    format: "dd-mm-yyyy",
+    todayBtn: "linked",
+    autoclose: true,
+    todayHighlight: true
+  });
 });
 
 $( document ).ready( function(){
