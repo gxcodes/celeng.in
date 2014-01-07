@@ -9,8 +9,8 @@
 
   <div class="row">
       <% if @target_savings != [] %>
-      <div class="large-4 columns">
         <% @target_savings.each do |target_saving| %>
+        <div class="large-4 columns">
           <div class="panel">
             <a href=<%= target_saving_events_url(target_saving) %>><%= target_saving.name %></a>
             
@@ -32,8 +32,8 @@
               <span class="target_amount"><%= number_to_currency(target_saving.jumlah || 0, :unit => "Rp ") %> / <%= number_to_currency(target_saving.amount_target, :unit => "Rp ") %></span>
             </div>
           </div>
+        </div>
         <% end %>
-      </div>
       <% else %>
       <p>You don't have any target savings! Why don't you make one now..</p>
       <% end %>
