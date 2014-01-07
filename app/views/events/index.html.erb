@@ -1,0 +1,27 @@
+<div class="row full">
+  <div class="large-3 medium-4 columns">
+    <%= render 'shared/sidebar_panel' %>
+  </div>
+
+  <div class="large-9 medium-8 columns">
+  <h2>This is the page where target savings reside.</h2>
+  <table>
+        <tr>
+          <td>Event Name </td>
+          <td>Date </td>
+          <td>Income</td>
+          <td>Expenses</td>
+          <td>Savings</td>
+        </tr>
+        <% @events.each do |event| %>
+        <tr>
+          <td><%= event.name %></td>
+          <td><%= event.start_time %></td>
+          <td><%= event.income %></td>
+          <td><%= event.outcome %></td>
+          <td><%= event.savings %></td>
+        </tr>
+        <% end %>
+    </table>
+  </div>
+</div>
