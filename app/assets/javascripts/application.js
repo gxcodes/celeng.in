@@ -28,7 +28,7 @@ $( document ).ready( function(){
 
   $("td" ).click( function() {
     var date = $( this ).attr( "data-date-iso" );
-    $('input#date').val(date);
+    $('input.date').val(date);
   });
 
   $("input.transaction-type").on("click", function(){
