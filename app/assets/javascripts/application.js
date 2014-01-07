@@ -39,7 +39,5 @@ $( document ).ready( function(){
       $( "#select_saving" ).hide('fast');
     }
   });
-//   $( "#clickme" ).click(function() {
-    
-// });
 });
+
