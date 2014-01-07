@@ -21,7 +21,7 @@ $(function(){ $(document).foundation(); });
 
 $(function() {
   $('.datepicker').datepicker({
-    format: "dd-mm-yyyy",
+    format: "dd MM yyyy",
     todayBtn: "linked",
     autoclose: true,
     todayHighlight: true
@@ -32,7 +32,7 @@ $( document ).ready( function(){
   $.backstretch("/assets/cover.jpg");
 
   $("td" ).click( function() {
-    var date = $( this ).attr( "data-date-iso" );
+    var date = $( this ).attr( "data-date" );
     $('input.date').val(date);
   });
 
