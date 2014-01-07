@@ -4,22 +4,40 @@
   </div>
 
   <div class="large-9 medium-8 columns">
-  <h2>This is the page where target savings reside.</h2>
-  <table>
-        <tr>
-          <td>Target Name </td>
-          <td>Deadline </td>
-          <td>Amount Target</td>
-          <td>Picture</td>
-        </tr>
+  <h2>Target Savings</h2>
+  <h4>This is your target savings list. Make sure you save some money to reach your dreams!</h4>
+
+  <div class="row">
+      <% if @target_savings != [] %>
+      <div class="large-4 columns">
         <% @target_savings.each do |target_saving| %>
-        <tr>
-          <td><%= target_saving.name %></td>
-          <td><%= target_saving.deadline %></td>
-          <td><%= target_saving.amount_target %></td>
-          <td><%= image_tag target_saving.images.thumb.url %></td>
-        </tr>
+          <div class="panel">
+            <a href=<%= target_saving_events_url(target_saving) %>><%= target_saving.name %></a>
+            
+            <br /><br />
+            <table class="saving_panel">
+              <tr>
+                <td>Deadline</td><td><%= target_saving.deadline %></td>
+              </tr>
+              <tr>
+                <td>Price</td><td><%= target_saving.amount_target %></td>
+              </tr>
+              <tr>
+                <td>Description</td><td><%= target_saving.description %></td>
+              </tr>
+            </table>
+            
+            <div class="progress success round">
+              <span class="meter" style="width: <%= target_saving.jumlah.to_f/target_saving.amount_target.to_f*100 %>%"></span>
+              <span class="target_amount"><%= number_to_currency(target_saving.jumlah || 0, :unit => "Rp ") %> / <%= number_to_currency(target_saving.amount_target, :unit => "Rp ") %></span>
+            </div>
+          </div>
         <% end %>
-      </table>
+      </div>
+      <% else %>
+      <p>You don't have any target savings! Why don't you make one now..</p>
+      <% end %>
+  </div>
+
   </div>
 </div>
