@@ -17,7 +17,7 @@
           <td><%= target_saving.name %></td>
           <td><%= target_saving.deadline %></td>
           <td><%= target_saving.amount_target %></td>
-          <td><%= image_tag target_saving.images, size: :thumb %></td>
+          <td><%= image_tag target_saving.images.thumb.url %></td>
         </tr>
         <% end %>
       </table>

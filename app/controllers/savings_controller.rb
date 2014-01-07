@@ -29,7 +29,7 @@ class SavingsController < ApplicationController
       if @target_saving.save
         format.html { redirect_to savings_index_path, notice: 'Target Savings was successfully created.' }
       else
-        format.html { render action: 'new' }
+        format.html { redirect_to savings_index_path, alert: 'Name already exist. Please specify another name.' }
       end
     end
   end
