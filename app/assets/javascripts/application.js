@@ -22,6 +22,7 @@ $(function(){ $(document).foundation(); });
 $(function() {
   $('.datepicker').datepicker({
     format: "dd MM yyyy",
+    weekStart: 1,
     todayBtn: "linked",
     autoclose: true,
     todayHighlight: true
@@ -45,4 +46,3 @@ $( document ).ready( function(){
     }
   });
 });
-
