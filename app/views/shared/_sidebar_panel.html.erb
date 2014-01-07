@@ -21,9 +21,9 @@
       <div class="panel">
         <h5><%= number_to_currency(@total, :unit => "Rp ") %></h5>
       </div>
-      
+
+      <h4>Target Savings</h4>      
       <% if @target_savings != [] %>
-      <h4>Target Savings</h4>
         <% @target_savings.each do |target_saving| %>
           <div class="panel">
             <a href=<%= target_saving_events_url(target_saving) %>><%= target_saving.name %></a>
