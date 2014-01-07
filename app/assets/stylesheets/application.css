@@ -21,3 +21,6 @@
 .gravatar_image img {margin: 0 0 2px; float: none; display: inline;}
 .target_amount {font-size: 0.7em; margin-top: -15px; margin-left: 10px; position: absolute;}
 .calendar td { width: 14.28%; }
+
+.alert-box.success {background-color: rgba(67,172,106,0.85) !important;}
+.alert-box.alert {background-color: rgba(240,65,36,0.85) !important;}
