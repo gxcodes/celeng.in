@@ -5,7 +5,7 @@
 
   <div class="large-9 medium-8 columns">
     <%= calendar @events, :start_day => :monday do |event| %> 
-      <%= link_to event.name, '#!', :'data-reveal-id' => 'updateModal' %>
+      <%= link_to event.name, '#!', :'data-reveal-id' => 'transactionModal' %>
     <% end %>
   </div>
 </div>
@@ -14,12 +14,5 @@
   <h2>What do you want to add?</h2>
     <p class="lead">Pick one of the transaction and enter the amount:</p>
     <%= render 'shared/transaction_form' %>
-  <a class="close-reveal-modal">&#215;</a>
-</div>
-
-<div id="updateModal" class="reveal-modal small" data-reveal>
-  <h2>Edit Transaction</h2>
-    <p class="lead">Update your transaction details below:</p>
-    <%= render 'shared/transaction_update_form' %>
   <a class="close-reveal-modal">&#215;</a>
 </div>
