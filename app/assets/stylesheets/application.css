@@ -15,6 +15,8 @@
  *= require_tree .
  */
 
+html {-webkit-font-smoothing: antialiased !important;}
+
 .row.full {min-width:100% !important;}
 .panel {background: rgba(242,242,242,0.75) !important;}
 
@@ -36,4 +38,5 @@
 .push_v10 {margin-top: 10px;}
 .pull_h10 {margin-left: 10px;}
 
-#footer {height: 56px; background-color: rgba(34,34,34,0.85); color: rgb(204,204,204);}
+#footer {height: 42px; background-color: rgba(34,34,34,0.85); color: rgb(204,204,204);}
+#footer p {font-size: smaller;}
