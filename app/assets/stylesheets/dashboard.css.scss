@@ -5,6 +5,6 @@
 .td_min_height { min-height: 80px; }
 .calendar { width: 100%; }
 .calendar td:hover { background-color: bisque; }
-.calendar td.today, .calendar td.today:hover { background-color: coral; }
+.calendar td.today, .calendar td.today:hover { background-color: #FF9944; }
 .calendar td.not-current-month { pointer-events: none; }
 .calendar td.not-current-month div.day_number { color: #bbb; pointer-events: none; }
