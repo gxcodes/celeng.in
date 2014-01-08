@@ -7,12 +7,17 @@
   <h2>Target Savings</h2>
   <h4>This is your target savings list. Make sure you save some money to reach your dreams!</h4>
 
-
+      <br />
       <% if @target_savings != [] %>
         <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
         <% @target_savings.each do |target_saving| %>
           <li>
-            <img src="http://placehold.it/480x320&text=What is Celeng.in">
+            <% if target_saving.images_url %>
+            <img src="<%= target_saving.images_url %>">
+            <% else %>
+            <img src="http://placehold.it/480x320&text=Target Saving Picture">
+            <% end %>
+            
             <div class="panel">
               <a href=<%= target_saving_events_url(target_saving) %>><%= target_saving.name %></a>
               
