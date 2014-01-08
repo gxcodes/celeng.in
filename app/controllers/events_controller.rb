@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   def index
-    target_saving = TargetSaving.find_by_id params[:target_saving_id]  
+    target_saving = TargetSaving.find_by_id params[:saving_id]  
     @events = target_saving.events
     @target_saving      = TargetSaving.new
     @target_savings     = current_user.target_savings.joins('LEFT JOIN events ON target_savings.id = events.target_saving_id').group('target_savings.name').select("target_savings.* , sum(events.savings) as jumlah")
