@@ -45,15 +45,14 @@ class SavingsController < ApplicationController
   end
   def update
     @target_saving = TargetSaving.find(params[:id])
-    # respond_to do |format|
-    #   if @example.update(example_params)
-    #     format.html { redirect_to @example, notice: 'Example was successfully updated.' }
-    #     format.json { head :no_content }
-    #   else
-    #     format.html { render action: 'edit' }
-    #     format.json { render json: @example.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    @target        = @target_saving.update_target params
+    respond_to do |format|
+      if @target.save
+        format.html { redirect_to savings_index_path, notice: 'Target Savings was successfully update' }
+      else
+        format.html { redirect_to savings_index_path, alert: 'Name already exist. Please specify another name.' }
+      end
+    end
   end
 
   # private
