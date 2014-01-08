@@ -18,7 +18,8 @@ gem 'font-awesome-rails'
 gem 'gravtastic'
 gem 'bootstrap-datepicker-rails'
 gem 'carrierwave'
-gem "mini_magick"
+gem 'mini_magick'
+gem 'thin'
 
 gem 'debugger', group: [:development, :test]
 
