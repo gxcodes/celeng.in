@@ -15,4 +15,7 @@
 /log
 /tmp
 
+# Ignore public folder. We don't need this synced.
+/public
+
 /.DS_Store
