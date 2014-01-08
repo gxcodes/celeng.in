@@ -20,9 +20,6 @@
     <%= radio_button_tag 'transaksi', 'add_saving', false, class: 'transaction-type' %><%= label_tag 'transaksi_add_saving', 'Add Savings' %>
 
     <br />
-    <!-- 
-      <%#= select_tag "savings", "<option>This Saving</option><option>That Saving</option><option>My Saving</option>".html_safe %>
-     -->
     <div id="select_saving" class="hide">
       <%= collection_select(:target, :target_savings, @target_savings, :id, :name) %>
     </div>

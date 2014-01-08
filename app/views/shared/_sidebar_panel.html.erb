@@ -1,7 +1,5 @@
     <div class="sidebar panel">
-      <h4 data-tooltip title="Here's a glimpse of your financial situation this month.">
-        <i class="fa fa-calendar"></i>&nbsp;&nbsp;This Month
-      </h4>
+      <h4><i class="fa fa-calendar"></i>&nbsp;&nbsp;This Months</h4>
       <table class="full_width_table">
         <tr data-tooltip title="Your total income for this month only." class="tip-right">
           <td>Income</td><td class="green"><%= number_to_currency(@total_income, :unit => "Rp ") %></td>
@@ -16,12 +14,16 @@
 
       <h4><i class="fa fa-money"></i>&nbsp;&nbsp;Residue</h4>
       <div class="panel">
-        <h5><%= number_to_currency(@residue, :unit => "Rp ") %></h5>
+        <h5 data-tooltip title="Money left to spend. You can not spend more than what's left here." class="tip-right">
+          <%= number_to_currency(@residue, :unit => "Rp ") %>
+        </h5>
       </div>
 
       <h4><i class="fa fa-btc"></i>&nbsp;&nbsp;Net Worth</h4>
       <div class="panel">
-        <h5><%= number_to_currency(@total, :unit => "Rp ") %></h5>
+        <h5 data-tooltip title="Total money you own, including your savings." class="tip-right">
+          <%= number_to_currency(@total, :unit => "Rp ") %>
+        </h5>
       </div>
 
       <h4><i class="fa fa-shopping-cart"></i>&nbsp;&nbsp;Target Savings</h4>      
@@ -52,9 +54,9 @@
   <a class="close-reveal-modal">&#215;</a>
 </div>
 
-<div id="editsavingModal" class="reveal-modal small" data-reveal>
+<div id="editSavingModal" class="reveal-modal small" data-reveal>
   <h2>Edit Target Saving</h2>
-    <p class="lead">Define your target saving here:</p>
+    <p class="lead">Edit your target saving here:</p>
     <div id="target"></div>
   <a class="close-reveal-modal">&#215;</a>
 </div>

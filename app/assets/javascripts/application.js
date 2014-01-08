@@ -47,7 +47,7 @@ $( document ).ready( function(){
   });
 
   $("a.edit").on("click", function(){
-    $( "div#target" ).load( $(this).attr('href')+" form",function(){
+    $( "div#target" ).load( $(this).attr('href')+" form", function(){
       $('.datepicker').datepicker({
         format: "dd MM yyyy",
         weekStart: 1,

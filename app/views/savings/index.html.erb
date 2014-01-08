@@ -22,7 +22,7 @@
 
               <%= link_to saving_url(target_saving), method: :delete, data: { confirm: 'Target Saving will be deleted. Are you sure?' }, class: 'right pull_h10' do %><i class="fa fa-times-circle fa-lg"></i><% end %>
 
-              <%= link_to edit_saving_url(target_saving), data: {reveal_id: "editsavingModal"}, class: 'right edit' do %><i class="fa fa-pencil fa-lg"></i><% end %>
+              <%= link_to edit_saving_url(target_saving), data: {reveal_id: "editSavingModal"}, class: 'right edit' do %><i class="fa fa-pencil fa-lg"></i><% end %>
 
               <div class="progress round push_v10">
                 <span class="meter" style="width: <%= target_saving.jumlah.to_f/target_saving.amount_target.to_f*100 %>%"></span>
