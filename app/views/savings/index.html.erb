@@ -6,7 +6,6 @@
   <div class="large-9 medium-8 columns">
   <h2>Target Savings</h2>
   <h4>This is your target savings list. Make sure you save some money to reach your dreams!</h4>
-
       <br />
       <% if @target_savings != [] %>
         <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
@@ -19,8 +18,9 @@
             <% end %>
             
             <div class="panel">
-              <a href=<%= target_saving_events_url(target_saving) %>><%= target_saving.name %></a>
-              
+              <a href=<%= saving_events_url(target_saving) %>><%= target_saving.name %></a>
+              <a href=<%= saving_events_url(target_saving) %>>edit</a>
+              <%= link_to 'Destroy', saving_url(target_saving), method: :delete, data: { confirm: 'Are you sure?' } %>
               <br /><br />
               <table class="saving_table">
                 <tr>

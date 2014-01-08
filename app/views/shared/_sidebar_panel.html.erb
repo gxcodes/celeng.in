@@ -26,7 +26,7 @@
       <% if @target_savings != [] %>
         <% @target_savings.each do |target_saving| %>
           <div class="panel">
-            <a href=<%= target_saving_events_url(target_saving) %>><%= target_saving.name %></a>
+            <a href=<%= saving_events_url(target_saving) %>><%= target_saving.name %></a>
             <br /><br />
             <div class="progress success round">
               <span class="meter" style="width: <%= target_saving.jumlah.to_f/target_saving.amount_target.to_f*100 %>%"></span>

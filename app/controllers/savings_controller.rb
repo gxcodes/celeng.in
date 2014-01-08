@@ -1,6 +1,6 @@
 class SavingsController < ApplicationController
   before_filter :authenticate_user! 
-  before_action :set_target_savings, only: [:show, :edit, :update, :destroy]
+  before_action :set_target_savings, only: [:show, :edit, :update]#, :destroy]
 
   def index
     @target_savings     = current_user.target_savings.joins('LEFT JOIN events ON target_savings.id = events.target_saving_id').group('target_savings.name').select("target_savings.* , sum(events.savings) as jumlah")
@@ -34,12 +34,12 @@ class SavingsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @target_saving.destroy
-  #   respond_to do |format|
-  #     format.html { redirect_to target_saving_url }
-  #   end
-  # end
+  def destroy
+    TargetSaving.find(params[:id]).destroy
+    respond_to do |format|
+      format.html { redirect_to savings_url }
+    end
+  end
 
   # private
   #   def set_target_savings
