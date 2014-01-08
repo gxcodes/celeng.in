@@ -12,7 +12,7 @@
         <% @target_savings.each do |target_saving| %>
           <li>
             <% if target_saving.images_url %>
-            <img src="<%= target_saving.images_url %>">
+            <%= image_tag target_saving.images_url(:thumb).to_s %>
             <% else %>
             <img src="http://placehold.it/480x320&text=Target Saving Picture">
             <% end %>
