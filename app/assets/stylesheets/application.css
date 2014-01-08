@@ -19,7 +19,8 @@
 .panel {background: rgba(242,242,242,0.75) !important;}
 
 .gravatar_image img {margin: 0 0 2px; float: none; display: inline;}
-.target_amount {font-size: 0.7em; margin-top: -15px; margin-left: 10px; position: absolute;}
+.target_amount {font-size: 0.7em; margin-top: -18px; margin-left: 10px; position: absolute;}
+.sidebar .target_amount {margin-top: -15px !important;}
 .calendar td { width: 14.28%; }
 .day a {display: block;}
 
@@ -27,3 +28,5 @@
 .alert-box.alert {background-color: rgba(240,65,36,0.85) !important;}
 
 .saving_table {width: 100%;}
+.push_v10 {margin-top: 10px;}
+.pull_h10 {margin-left: 10px;}
