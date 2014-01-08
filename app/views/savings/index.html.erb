@@ -14,7 +14,7 @@
             <% if target_saving.images_url %>
             <%= image_tag target_saving.images_url(:thumb).to_s %>
             <% else %>
-            <img src="http://placehold.it/480x320&text=Target Saving Picture">
+            <img src="http://placehold.it/480x320&text=<%= target_saving.name %>">
             <% end %>
             
             <div class="panel">

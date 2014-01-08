@@ -48,7 +48,7 @@ class SavingsController < ApplicationController
     @target        = @target_saving.update_target params
     respond_to do |format|
       if @target.save
-        format.html { redirect_to savings_index_path, notice: 'Target Savings was successfully update' }
+        format.html { redirect_to savings_index_path, notice: 'Target Savings was successfully updated.' }
       else
         format.html { redirect_to savings_index_path, alert: 'Name already exist. Please specify another name.' }
       end
