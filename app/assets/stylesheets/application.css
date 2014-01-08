@@ -35,3 +35,5 @@
 .full_width_table {width: 100%;}
 .push_v10 {margin-top: 10px;}
 .pull_h10 {margin-left: 10px;}
+
+#footer {height: 56px; background-color: rgba(34,34,34,0.85); color: rgb(204,204,204);}
