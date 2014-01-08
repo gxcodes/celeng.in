@@ -46,6 +46,10 @@ $( document ).ready( function(){
     }
   });
 
+  $("a.edit").on("click", function(){
+    $( "div#target" ).load( $(this).attr('href')+" form" );
+  });
+
   $(window).bind("load", function () {
       var footer = $("#footer");
       var pos = footer.position();
