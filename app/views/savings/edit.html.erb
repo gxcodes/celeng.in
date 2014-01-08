@@ -1,0 +1,64 @@
+<%= form_for @target_saving, url: saving_url, method: :put, :html => {:multipart => true} do |f| %>
+  <fieldset>
+    <legend>Target Saving: </legend>
+
+    <div class="row">
+      <div class="small-3 columns">
+        <label for="name" class="right inline">Name: </label>
+      </div>
+      <div class="small-9 columns">
+        <%= text_field_tag 'name', @target_saving.name %>
+        <%# debugger%>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-3 columns">
+        <label for="amount_target" class="right inline">Amount: </label>
+      </div>
+      <div class="small-9 columns">
+        <div class="row collapse">
+          <div class="small-3 large-2 columns">
+            <span class="prefix">Rp </span>
+          </div>
+          <div class="small-9 large-10 columns">
+            <%= number_field_tag 'amount_target', @target_saving.amount_target, placeholder: 'Enter amount...' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-3 columns">
+        <label for="deadline" class="right inline">Due Date: </label>
+      </div>
+      <div class="small-9 columns">
+        <%= text_field_tag 'deadline', @target_saving.deadline, class: 'datepicker' %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-3 columns">
+        <label for="description" class="right inline">Description: </label>
+      </div>
+      <div class="small-9 columns">
+        <%= text_area_tag 'description', @target_saving.description %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-3 columns">
+        <label for="description" class="right inline">Picture: </label>
+      </div>
+      <div class="small-9 columns">
+        <%= file_field_tag :images %>
+        <%= hidden_field_tag  :images_cache %>
+      </div>
+    </div>
+
+
+  </fieldset>
+
+  <%= submit_tag "Submit", data: { disable_with: "Processing..." }, class: "button small" %>
+
+<% end %>

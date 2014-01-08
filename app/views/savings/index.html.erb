@@ -19,7 +19,7 @@
             
             <div class="panel">
               <a href=<%= saving_events_url(target_saving) %>><%= target_saving.name %></a>
-              <a href=<%= saving_events_url(target_saving) %>>edit</a>
+              <%= link_to 'Edit', edit_saving_url(target_saving) %>
               <%= link_to 'Destroy', saving_url(target_saving), method: :delete, data: { confirm: 'Are you sure?' } %>
               <br /><br />
               <table class="saving_table">
