@@ -47,7 +47,15 @@ $( document ).ready( function(){
   });
 
   $("a.edit").on("click", function(){
-    $( "div#target" ).load( $(this).attr('href')+" form" );
+    $( "div#target" ).load( $(this).attr('href')+" form",function(){
+      $('.datepicker').datepicker({
+        format: "dd MM yyyy",
+        weekStart: 1,
+        todayBtn: "linked",
+        autoclose: true,
+        todayHighlight: true
+      });
+    });
   });
 
   $(window).bind("load", function () {

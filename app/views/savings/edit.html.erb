@@ -33,7 +33,7 @@
         <label for="deadline" class="right inline">Due Date: </label>
       </div>
       <div class="small-9 columns">
-        <%= text_field_tag 'deadline', @target_saving.deadline, class: 'datepicker' %>
+        <%= text_field_tag 'deadline', @target_saving.deadline.strftime("%d %B %Y"), class: 'date datepicker' %>
       </div>
     </div>
 
