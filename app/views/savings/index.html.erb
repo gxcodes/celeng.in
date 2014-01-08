@@ -19,10 +19,10 @@
               <br /><br />
               <table class="saving_table">
                 <tr>
-                  <td>Deadline</td><td><%= target_saving.deadline %></td>
+                  <td>Deadline</td><td><%= target_saving.deadline.strftime("%d %B %Y") %></td>
                 </tr>
                 <tr>
-                  <td>Price</td><td><%= target_saving.amount_target %></td>
+                  <td>Price</td><td><%= number_to_currency(target_saving.amount_target, :unit => "Rp ") %></td>
                 </tr>
                 <tr>
                   <td>Description</td><td><%= target_saving.description %></td>
