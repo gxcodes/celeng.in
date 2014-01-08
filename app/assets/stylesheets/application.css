@@ -27,6 +27,11 @@
 .alert-box.success {background-color: rgba(67,172,106,0.85) !important;}
 .alert-box.alert {background-color: rgba(240,65,36,0.85) !important;}
 
+.green {color: rgb(67,172,106);}
+.red {color: rgb(240,65,36);}
+
+.progress .meter {background-color: orange !important;}
+
 .full_width_table {width: 100%;}
 .push_v10 {margin-top: 10px;}
 .pull_h10 {margin-left: 10px;}

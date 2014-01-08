@@ -1,34 +1,34 @@
     <div class="sidebar panel">
-      <h4>This Month</h4>
+      <h4><i class="fa fa-calendar"></i>&nbsp;&nbsp;This Month</h4>
       <table class="full_width_table">
         <tr>
-          <td>Income</td><td><%= number_to_currency(@total_income, :unit => "Rp ") %></td>
+          <td>Income</td><td class="green"><%= number_to_currency(@total_income, :unit => "Rp ") %></td>
         </tr>
         <tr>
-          <td>Expenses</td><td><%= number_to_currency(@total_expenses, :unit => "Rp ") %></td>
+          <td>Expenses</td><td class="red"><%= number_to_currency(@total_expenses, :unit => "Rp ") %></td>
         </tr>
         <tr>
-          <td>Net Income</td><td><%= number_to_currency(@total_month, :unit => "Rp ") %></td>
+          <td>Net Income</td><td class="green"><%= number_to_currency(@total_month, :unit => "Rp ") %></td>
         </tr>
       </table>
 
-      <h4>Residue</h4>
+      <h4><i class="fa fa-money"></i>&nbsp;&nbsp;Residue</h4>
       <div class="panel">
         <h5><%= number_to_currency(@residue, :unit => "Rp ") %></h5>
       </div>
 
-      <h4>Net Worth</h4>
+      <h4><i class="fa fa-btc"></i>&nbsp;&nbsp;Net Worth</h4>
       <div class="panel">
         <h5><%= number_to_currency(@total, :unit => "Rp ") %></h5>
       </div>
 
-      <h4>Target Savings</h4>      
+      <h4><i class="fa fa-shopping-cart"></i>&nbsp;&nbsp;Target Savings</h4>      
       <% if @target_savings != [] %>
         <% @target_savings.each do |target_saving| %>
           <div class="panel">
             <a href=<%= saving_events_url(target_saving) %>><%= target_saving.name %></a>
             <br /><br />
-            <div class="progress success round">
+            <div class="progress round">
               <span class="meter" style="width: <%= target_saving.jumlah.to_f/target_saving.amount_target.to_f*100 %>%"></span>
               <span class="target_amount"><%= number_to_currency(target_saving.jumlah || 0, :unit => "Rp ") %> / <%= number_to_currency(target_saving.amount_target, :unit => "Rp ") %></span>
             </div>
