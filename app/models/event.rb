@@ -10,7 +10,7 @@ class Event < ActiveRecord::Base
     @event = Event.new
     if param[:transaksi] == "add_income" 
       @event.income     = param[:amount].to_i
-      if param[:name] = "" || nil
+      if param[:name] == "" || param[:name] == nil
         @event.name       = "Income: #{param[:amount]}"
       else
         @event.name       = "Income: #{param[:name]}"
