@@ -29,4 +29,12 @@ class Event < ActiveRecord::Base
       false
     end
   end
+  def finish target, current_user
+    self.outcome      = target.amount_target
+    self.name         = "Add Expenses"
+    self.start_time   = Time.now
+    self.user         = current_user
+    self.description  = "Buy "+target.name
+    self
+  end
 end

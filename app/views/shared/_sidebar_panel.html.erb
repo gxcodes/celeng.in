@@ -31,6 +31,9 @@
         <% @target_savings.each do |target_saving| %>
           <div class="panel">
             <a href=<%= saving_events_url(target_saving) %>><%= target_saving.name %></a>
+            <%# if target_saving.jumlah == target_saving.amount_target %>
+            <%= link_to "Finish", target_finish_url(target_saving), method: :post %>
+            <%# %>
             <br /><br />
             <div class="progress round">
               <span class="meter" style="width: <%= target_saving.jumlah.to_f/target_saving.amount_target.to_f*100 %>%"></span>

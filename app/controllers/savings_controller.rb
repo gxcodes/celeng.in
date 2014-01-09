@@ -24,7 +24,6 @@ class SavingsController < ApplicationController
 
   def create
     @target_saving  = TargetSaving.add_target params, current_user 
-    #debugger
     respond_to do |format|
       if @target_saving.save
         format.html { redirect_to savings_index_path, notice: 'Target Savings was successfully created.' }
@@ -49,6 +48,19 @@ class SavingsController < ApplicationController
     respond_to do |format|
       if @target.save
         format.html { redirect_to savings_index_path, notice: 'Target Savings was successfully updated.' }
+      else
+        format.html { redirect_to savings_index_path, alert: 'Name already exist. Please specify another name.' }
+      end
+    end
+  end
+  def finish
+    @event = Event.new
+    @target_finish = TargetSaving.find(params[:id])
+    @event = @event.finish @target_finish, current_user 
+    respond_to do |format|
+      if @event.save
+        @target_finish.destroy
+        format.html { redirect_to savings_index_path, notice: 'Target Savings was successfully finished.' }
       else
         format.html { redirect_to savings_index_path, alert: 'Name already exist. Please specify another name.' }
       end
