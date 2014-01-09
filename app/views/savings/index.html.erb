@@ -18,11 +18,11 @@
             <% end %>
             
             <div class="panel">
-              <a href=<%= saving_events_url(target_saving) %>><%= target_saving.name %></a>
+              <a href=<%= saving_events_url(target_saving) %> class="tip-right" data-tooltip title="View target saving history"><%= target_saving.name %></a>
 
-              <%= link_to saving_url(target_saving), method: :delete, data: { confirm: 'Target Saving will be deleted. Are you sure?' }, class: 'right pull_h10' do %><i class="fa fa-times-circle fa-lg"></i><% end %>
+              <%= link_to saving_url(target_saving), method: :delete, data: { confirm: 'Target Saving will be deleted. Are you sure?' }, class: 'right pull_h10' do %><i class="fa fa-times-circle fa-lg tip-right" data-tooltip title="Delete Target"></i><% end %>
 
-              <%= link_to edit_saving_url(target_saving), data: {reveal_id: "editSavingModal"}, class: 'right edit' do %><i class="fa fa-pencil fa-lg"></i><% end %>
+              <%= link_to edit_saving_url(target_saving), data: {reveal_id: "editSavingModal"}, class: 'right edit' do %><i class="fa fa-pencil fa-lg tip-right" data-tooltip title="Edit Target"></i><% end %>
 
               <div class="progress round push_v10">
                 <span class="meter" style="width: <%= target_saving.jumlah.to_f/target_saving.amount_target.to_f*100 %>%"></span>

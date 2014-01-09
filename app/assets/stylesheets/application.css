@@ -37,6 +37,7 @@ html {-webkit-font-smoothing: antialiased !important;}
 
 .saving_image {width:100%;}
 .progress .meter {background-color: orange !important;}
+.tooltip {font-size: small !important;}
 
 .full_width_table {width: 100% !important;}
 .push_v10 {margin-top: 10px !important;}
