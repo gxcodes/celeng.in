@@ -3,7 +3,7 @@ class TargetSaving < ActiveRecord::Base
   has_many :events, dependent: :destroy
   mount_uploader :images, ImagesUploader
 
-  validates :name, presence:true, uniqueness: true
+  validates :name, uniqueness: {scope: :user_id}, presence: true
   validates :deadline, presence:true
   validates :price, presence:true 
   
