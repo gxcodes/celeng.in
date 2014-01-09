@@ -42,9 +42,6 @@ html {-webkit-font-smoothing: antialiased !important;}
 .push_v10 {margin-top: 10px !important;}
 .pull_h10 {margin-left: 10px !important;}
 
-#footer {height: 42px; background-color: rgba(34,34,34,0.85); color: rgb(204,204,204);}
-#footer p, .tooltip {font-size: smaller !important;}
-
 /*
  * Timeline Style
  */
