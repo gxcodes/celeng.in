@@ -1,4 +1,4 @@
-<%= form_for @target_saving, :html => {:multipart => true} do |f| %>
+<%= form_for @target_saving, :html => {:multipart => true}, data: {abide: true} do |f| %>
   <fieldset>
     <legend>Target Saving: </legend>
 
@@ -7,7 +7,7 @@
         <label for="name" class="right inline">Name: </label>
       </div>
       <div class="small-9 columns">
-        <%= text_field_tag 'name' %>
+        <%= text_field_tag 'name', nil, required: true %>
         <small class="error">Name must be filled.</small>
       </div>
     </div>
@@ -22,7 +22,7 @@
             <span class="prefix">Rp </span>
           </div>
           <div class="small-9 large-10 columns">
-            <%= number_field_tag 'amount_target', nil, placeholder: 'Enter amount...' %>
+            <%= number_field_tag 'amount_target', nil, required: true, placeholder: 'Enter amount...' %>
             <small class="error">Amount must be filled.</small>
           </div>
         </div>
@@ -34,7 +34,7 @@
         <label for="deadline" class="right inline">Due Date: </label>
       </div>
       <div class="small-9 columns">
-        <%= text_field_tag 'deadline', nil, class: 'datepicker' %>
+        <%= text_field_tag 'deadline', nil, required: true, class: 'datepicker' %>
         <small class="error">Deadline must be filled.</small>
       </div>
     </div>
