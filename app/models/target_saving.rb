@@ -3,7 +3,9 @@ class TargetSaving < ActiveRecord::Base
   has_many :events, dependent: :destroy
   mount_uploader :images, ImagesUploader
 
-  validates :name , presence:true, uniqueness: true
+  validates :name, presence:true, uniqueness: true
+  validates :deadline, presence:true
+  validates :price, presence:true 
   
   def self.add_target params, current_user
     target_saving               = TargetSaving.new

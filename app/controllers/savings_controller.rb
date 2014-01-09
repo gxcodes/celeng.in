@@ -39,9 +39,11 @@ class SavingsController < ApplicationController
       format.html { redirect_to savings_url }
     end
   end
+
   def edit
     @target_saving = TargetSaving.find(params[:id])
   end
+
   def update
     @target_saving = TargetSaving.find(params[:id])
     @target        = @target_saving.update_target params
@@ -53,6 +55,7 @@ class SavingsController < ApplicationController
       end
     end
   end
+
   def finish
     @event = Event.new
     @target_finish = TargetSaving.find(params[:id])
