@@ -43,3 +43,15 @@ html {-webkit-font-smoothing: antialiased !important;}
 
 #footer {height: 42px; background-color: rgba(34,34,34,0.85); color: rgb(204,204,204);}
 #footer p, .tooltip {font-size: smaller !important;}
+
+/*
+ * Timeline Style
+ */
+.timeline {list-style-type: none; background: url(timeline.jpg) top left repeat-y; margin-left: 150px;}
+.timeline li.panel {width: 40%;}
+.timeline li {margin-left: 15px;}
+.timeline li i {position: absolute; display: block; margin-left: -43px;}
+.timeline .saving_time {position: absolute; display: block; margin-left: -145px; margin-top: -2px; font-size: small;}
+.timeline .saving_amount {font-weight: bolder;}
+.timeline p {margin-top: 20px !important;}
+

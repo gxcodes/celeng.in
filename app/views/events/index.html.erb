@@ -5,23 +5,23 @@
 
   <div class="large-9 medium-8 columns">
   <h2>Saving History for <%= @target_saving_name %></h2>
-  <table>
-        <tr>
-          <td>Event Name </td>
-          <td>Date </td>
-          <td>Income</td>
-          <td>Expenses</td>
-          <td>Savings</td>
-        </tr>
+  <% if @events != [] %>
+    <br />
+    <ul class="timeline">
         <% @events.each do |event| %>
-        <tr>
-          <td><%= event.name %></td>
-          <td><%= event.start_time %></td>
-          <td><%= event.income %></td>
-          <td><%= event.outcome %></td>
-          <td><%= event.savings %></td>
-        </tr>
+        <li class="panel">
+          <i class="fa fa-dot-circle-o fa-lg"></i>
+          <span class="saving_time"><%= event.start_time.strftime("%d %B %Y") %></span>
+          <span class="saving_name blue"><%= event.name %></span>
+          <span class="saving_amount green"><%= number_to_currency(event.savings, :unit => "Rp ") %></span>
+          <p><%= event.description %></p>
+        </li>
         <% end %>
-    </table>
+    </ul>
+  <% else %>
+    <br /><br />
+    <h3>Ooops..</h3>
+    <h4>You have no saving history. Why don't you save some money for this item now?</h4>
+  <% end %>
   </div>
 </div>
