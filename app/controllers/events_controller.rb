@@ -2,10 +2,10 @@ class EventsController < ApplicationController
 
   def index
     target_saving = TargetSaving.find_by_id params[:saving_id]
-    @events = target_saving.events
+    @events = target_saving.events.order(start_time: :desc)
     @target_saving_name =  target_saving.name
     @target_saving      = TargetSaving.new
-    @target_savings     = current_user.target_savings.joins('LEFT JOIN events ON target_savings.id = events.target_saving_id').group('target_savings.name').select("target_savings.* , sum(events.savings) as jumlah")
+    @target_savings     = current_user.target_savings.joins('LEFT JOIN events ON target_savings.id = events.target_saving_id').group('target_savings.name').select("target_savings.* , sum(events.savings) as jumlah").order(deadline: :asc)
     @total_income_all   = current_user.events.sum('income')
     @total_saving_all   = current_user.events.sum('savings')
     @total_outcome_all  = current_user.events.sum('outcome')
