@@ -30,7 +30,7 @@
       <% if @target_savings != [] %>
         <% @target_savings.each do |target_saving| %>
           <div class="panel">
-            <a href=<%= saving_events_url(target_saving) %>><%= target_saving.name %></a>
+            <a href=<%= saving_events_url(target_saving) %> class="tip-right" data-tooltip title="View target saving history"><%= target_saving.name %></a>
             <% if target_saving.jumlah == target_saving.amount_target %>
               <%= link_to target_finish_url(target_saving), method: :post, class: 'trophy right' do %>
                 <span class="fa-stack" data-tooltip title="Target achieved! Click the trophy to buy item (add expenses)." class="tip-right">
