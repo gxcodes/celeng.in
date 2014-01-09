@@ -8,7 +8,8 @@ Celengin::Application.routes.draw do
   resources :savings, only: [:index, :destroy, :update, :edit] do #, :events
     resources :events, only: [:index] 
   end
-  post  "events"                    => "events#create"
-  post  "target_savings"            => "savings#create"
-  post   "target_savings/:id/finish" => "savings#finish", as: "target_finish"
+  post    "events"                    => "events#create"
+  post    "target_savings"            => "savings#create"
+  post    "target_savings/:id/finish" => "savings#finish",  as: "target_finish"
+  delete  "target_savings/:id/clean"  => "savings#clean",   as: "target_clean"
 end

@@ -72,7 +72,7 @@
             <div class="panel">
               <a href=<%= saving_events_url(target_saving) %> class="tip-right" data-tooltip title="View target saving history"><%= target_saving.name %></a>
 
-              <%= link_to saving_url(target_saving), method: :delete, data: { confirm: 'Target Saving will be deleted. Are you sure?' }, class: 'right pull_h10' do %><i class="fa fa-times-circle fa-lg tip-right" data-tooltip title="Delete Target"></i><% end %>
+              <%= link_to target_clean_url(target_saving), method: :delete, data: { confirm: 'Target Saving will be deleted. Are you sure?' }, class: 'right pull_h10' do %><i class="fa fa-times-circle fa-lg tip-right" data-tooltip title="Delete Target"></i><% end %>
 
               <%= link_to edit_saving_url(target_saving), data: {reveal_id: "editSavingModal"}, class: 'right edit' do %><i class="fa fa-pencil fa-lg tip-right" data-tooltip title="Edit Target"></i><% end %>
               <p>Completed</p>

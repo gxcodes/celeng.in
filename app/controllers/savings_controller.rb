@@ -27,6 +27,13 @@ class SavingsController < ApplicationController
     end
   end
 
+  def clean
+    TargetSaving.find(params[:id]).delete
+    respond_to do |format|
+      format.html { redirect_to savings_url }
+    end
+  end
+
   def edit
     @target_saving = TargetSaving.find(params[:id])
   end

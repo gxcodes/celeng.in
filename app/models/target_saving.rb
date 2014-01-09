@@ -1,6 +1,6 @@
 class TargetSaving < ActiveRecord::Base
   belongs_to :user
-  has_many :events#, dependent: :destroy
+  has_many :events, dependent: :destroy
   mount_uploader :images, ImagesUploader
 
   validates :name, uniqueness: {scope: :user_id}, presence: true
