@@ -4,8 +4,8 @@
   </div>
 
   <div class="large-9 medium-8 columns">
-    <%= calendar @events, :start_day => :monday do |event| %> 
-      <%= link_to event.name, '#!', :'data-reveal-id' => 'transactionModal' %>
+    <%= calendar @events, :start_day => :monday do |event| %>
+      <a href="#!" data-tooltip title="<%= event.description %>" class="tip-bottom"><%= event.name %></a>
     <% end %>
   </div>
 </div>

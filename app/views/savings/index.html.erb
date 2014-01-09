@@ -28,6 +28,7 @@
               <%= link_to saving_url(target_saving), method: :delete, data: { confirm: 'Target Saving will be deleted. Are you sure?' }, class: 'right pull_h10' do %><i class="fa fa-times-circle fa-lg tip-right" data-tooltip title="Delete Target"></i><% end %>
 
               <%= link_to edit_saving_url(target_saving), data: {reveal_id: "editSavingModal"}, class: 'right edit' do %><i class="fa fa-pencil fa-lg tip-right" data-tooltip title="Edit Target"></i><% end %>
+
               <div class="progress round push_v10">
                 <span class="meter" style="width: <%= target_saving.jumlah.to_f/target_saving.amount_target.to_f*100 %>%"></span>
                 <span class="target_amount"><%= number_to_currency(target_saving.jumlah || 0, :unit => "Rp ") %> / <%= number_to_currency(target_saving.amount_target, :unit => "Rp ") %></span>
@@ -55,8 +56,8 @@
 
 <div class="row"> <!-- Row kedua -->
   <div class="large-12 columns">
-  <h2>Target Savings</h2>
-  <h4>This is your target savings list. Make sure you save some money to reach your dreams!</h4>
+  <h2>Completed Target Savings</h2>
+  <h4>Congratulation! Goals that have been reached will be placed here.</h4>
       <br />
       <% if @target_savings_completed != [] %>
         <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
@@ -91,7 +92,7 @@
         <% end %>
         </ul>
       <% else %>
-      <p>You don't have any target savings! Why don't you make one now..</p>
+      <p>Oops, no completed target yet. Don't worry, just create one (if you haven't already done so) and make your way here..</p>
       <% end %>
       </div>
     </div> <!-- row kedua -->
