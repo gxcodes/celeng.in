@@ -1,5 +1,5 @@
 <!-- <form> -->
-<%= form_for(@event) do |f| %>
+<%= form_for @event, :html => {:multipart => true}, data: {abide: true}  do |f| %>
   <div class="row">
     <div class="small-8 small-offset-4">
       <div class="row">
@@ -29,7 +29,8 @@
         <span class="prefix">Rp </span>
       </div>
       <div class="small-9 large-10 columns">
-        <%= number_field_tag 'amount', nil, placeholder: 'Enter amount...' %>
+        <%= number_field_tag 'amount', nil, required: true, placeholder: 'Enter amount...' %>
+        <small class="error">Rp must be filled.</small>
       </div>
     </div>
 

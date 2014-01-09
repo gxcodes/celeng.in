@@ -2,6 +2,11 @@ class Event < ActiveRecord::Base
   by_star_field :start_time
   belongs_to :target_saving
   belongs_to :user
+
+  validates :income, presence:true
+  validates :outcome, presence:true
+  validates :outcome, presence:true
+
   def self.add param, current_user
     @event = Event.new
     
@@ -21,6 +26,7 @@ class Event < ActiveRecord::Base
     @event.description  = param['description']
     @event
   end
+
   def self.check_balance event
     @before_saving = event.target_saving.amount_target - event.target_saving.events.sum('savings')
     if @before_saving >= event.savings || event.savings == 0
@@ -29,6 +35,7 @@ class Event < ActiveRecord::Base
       false
     end
   end
+  
   def finish target, current_user
     self.outcome      = target.amount_target
     self.name         = "Add Expenses"
