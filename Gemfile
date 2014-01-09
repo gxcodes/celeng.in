@@ -12,7 +12,7 @@ end
 
 gem 'foundation-rails'
 gem 'devise'
-gem 'simple_calendar', :path => 'vendor/gems/simple_calendar-0.1.9'
+gem 'simple_calendar', path: 'vendor/gems/simple_calendar-0.1.9'
 gem 'backstretch-rails'
 gem 'font-awesome-rails'
 gem 'gravtastic'
@@ -23,4 +23,12 @@ gem 'thin'
 
 gem 'debugger', group: [:development, :test]
 
-gem 'by_star', :git => "git://github.com/radar/by_star"  #gem for find by_month, by_year, dll => https://github.com/radar/by_star
+gem 'by_star', git: 'git://github.com/radar/by_star'  #gem for find by_month, by_year, dll => https://github.com/radar/by_star
+
+gem 'unicorn', group: :production
+
+group :development do
+  gem 'capistrano', '~> 2'
+  gem 'capistrano-unicorn', require: false
+
+end
