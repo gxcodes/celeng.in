@@ -12,17 +12,17 @@
         </tr>
       </table>
 
-      <h4><i class="fa fa-money"></i>&nbsp;&nbsp;Residue</h4>
+      <h4><i class="fa fa-btc"></i>&nbsp;&nbsp;Total Saving</h4>
       <div class="panel">
-        <h5 data-tooltip title="Money left to spend. You can not spend more than what's left here." class="tip-right green">
-          <%= number_to_currency(@residue, :unit => "Rp ") %>
+        <h5 data-tooltip title="Total saving added." class="tip-right blue">
+          <%= number_to_currency(@total_saving_all, :unit => "Rp ") %>
         </h5>
       </div>
 
-      <h4><i class="fa fa-btc"></i>&nbsp;&nbsp;Net Worth</h4>
+      <h4><i class="fa fa-money"></i>&nbsp;&nbsp;Balance</h4>
       <div class="panel">
-        <h5 data-tooltip title="Total money you own, including your savings." class="tip-right blue">
-          <%= number_to_currency(@total, :unit => "Rp ") %>
+        <h5 data-tooltip title="Money left to spend. You can not spend more than what's left here." class="tip-right green">
+          <%= number_to_currency(@residue, :unit => "Rp ") %>
         </h5>
       </div>
 
