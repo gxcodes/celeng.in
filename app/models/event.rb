@@ -8,13 +8,20 @@ class Event < ActiveRecord::Base
 
   def self.add param, current_user
     @event = Event.new
-    
     if param[:transaksi] == "add_income" 
       @event.income     = param[:amount].to_i
-      @event.name       = "Income: #{param[:name]}"
+      if param[:name] = "" || nil
+        @event.name       = "Income: #{param[:amount]}"
+      else
+        @event.name       = "Income: #{param[:name]}"
+      end
     elsif param[:transaksi] == "add_outcome"
+      if param[:name] == "" || param[:name] == nil
+        @event.name       = "Expenses: #{param[:amount]}"
+      else
+        @event.name       = "Expenses: #{param[:name]}"
+      end
       @event.outcome    = param[:amount].to_i
-      @event.name       = "Expenses: #{param[:name]}"
     elsif param[:transaksi] == "add_saving"
       @event.target_saving_id = param[:target][:target_savings]
       @event.savings    = param[:amount].to_i

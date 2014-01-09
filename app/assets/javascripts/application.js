@@ -40,6 +40,7 @@ $( document ).ready( function(){
   $("input.transaction-type").on("click", function(){
     if($(this).attr('id') == 'transaksi_add_saving'){
       $( "#select_saving" ).show('fast');
+      $( "#name_events" ).hide('fast');
     }
     if($(this).attr('id') == 'transaksi_add_outcome' || $(this).attr('id') == 'transaksi_add_income'){
       $( "#select_saving" ).hide('fast');
