@@ -7,15 +7,10 @@
 
 <br /><br /><br />
 <div class="row">
-  <div class="large-5 columns">
+  <div class="large-5 columns text-justify">
     <h4>What is Celeng.in</h4>
-    <p>Celeng.in is an online application to help you reach your dreams. It is designed to help you manage your money easily, and beautifuly. You can easily write your income, what you spend and set your goals (eg. Buy your dream car).</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Celeng.in is an online application to help you reach your dreams. It is designed to help you manage your money easily, and beautifuly. You can set your goals (eg. Buy your dream car) and the app will help you to reach them.</p>
+    <p>Celeng.in will help you to be disciplined in achieving your goals. Once you set the target saving item, you will have the freedom to allocate your money based on your priority. The app will show you the status of each item and how far (or close) to reach it.</p>
   </div>
   <div class="large-7 columns">
     <a class="th radius" href="#">
@@ -31,32 +26,31 @@
       <%= image_tag 'dashboard.jpg' %>
     </a>
   </div>
-  <div class="large-5 columns">
+  <div class="large-5 columns text-justify">
     <h4>How does it work?</h4>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Celeng.in will help you manage your money and reach your dream items by providing a simple yet intuitive calendar interface. You just add your income or expenses on any given day. And then, after you set your target saving item, you can start add to savings and walk your way up to the goals.</p>
+    <p>What could be simpler than that? :)</p>
+    <p>You can also look at your financial situation any time. The sidebar always show you this information for your convenience.</p>
   </div>
 </div>
 
 <% if user_signed_in? %>
-<br /><br /><br />
+<br /><br />
 <div class="row">
-  <div class="small-12 medium-6 large-6 small-centered large-centered columns">
-    <p class="text-center">Need any <%= link_to "Help", root_path %>?</p>
+  <div class="large-12 large-centered columns text-center">
+    <p>Need any <%= link_to "Assistance", help_index_path %>?</p>
    </div>
 </div>
+<br />
 <% else %>
-<br /><br /><br />
+<br /><br />
 <div class="row">
-  <div class="small-12 medium-6 large-6 small-centered large-centered columns">
+  <div class="large-12 large-centered columns text-center">
     <p>What are you waiting for? Go ahead and have your dreams come to reality.. :)</p>
     <a class="button" data-reveal-id="signupModal">Sign Up Now</a>
    </div>
 </div>
+<br />
 
 <div id="signupModal" class="reveal-modal small" data-reveal>
   <h2>Sign up</h2>

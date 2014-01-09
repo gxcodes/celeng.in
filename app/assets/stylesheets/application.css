@@ -21,23 +21,25 @@ html {-webkit-font-smoothing: antialiased !important;}
 .panel {background: rgba(242,242,242,0.75) !important;}
 
 .gravatar_image img {margin: 0 0 2px; float: none; display: inline;}
+.calendar td {width: 14.28% !important;}
+.day a {display: block !important;}
 .target_amount {font-size: 0.7em; margin-top: -18px; margin-left: 10px; position: absolute;}
 .sidebar .target_amount {margin-top: -15px !important;}
-.calendar td { width: 14.28%; }
-.day a {display: block;}
+.sidebar h5 {font-weight: bolder;}
 
 .alert-box.success {background-color: rgba(67,172,106,0.85) !important;}
 .alert-box.alert {background-color: rgba(240,65,36,0.85) !important;}
 
-.green {color: rgb(67,172,106);}
-.red {color: rgb(240,65,36);}
+.green {color: rgb(67,172,106) !important;}
+.blue {color: rgb(0,140,186) !important;}
+.red {color: rgb(240,65,36) !important;}
 
 .saving_image {width:100%;}
 .progress .meter {background-color: orange !important;}
 
-.full_width_table {width: 100%;}
-.push_v10 {margin-top: 10px;}
-.pull_h10 {margin-left: 10px;}
+.full_width_table {width: 100% !important;}
+.push_v10 {margin-top: 10px !important;}
+.pull_h10 {margin-left: 10px !important;}
 
 #footer {height: 42px; background-color: rgba(34,34,34,0.85); color: rgb(204,204,204);}
 #footer p, .tooltip {font-size: smaller !important;}

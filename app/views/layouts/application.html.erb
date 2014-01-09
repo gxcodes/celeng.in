@@ -54,7 +54,7 @@
         <li class="divider"></li>
         <li><%= link_to new_user_session_path, data: {reveal_id: "signinModal"} do %><i class="fa fa-sign-in fa-lg"></i>&nbsp;&nbsp;Login<% end %></li>
         <li class="divider"></li>
-        <li class="has-form"><a href="#" class="small button">How To Use</a></li>
+        <li class="has-form"><%= link_to help_index_path, class: 'small button' do %>How To Use<% end %></li>
       </ul>
       <% end %>
 
@@ -111,9 +111,9 @@
     <%= yield %>
     <%= javascript_include_tag "application" %>
 
-<div id="footer">
+<div id="footer" class="hide-for-small">
   <p class="text-center">
-    This is the damn footer. Because every good website needs a strong footing.<br />:-)
+    &copy; 2014 - This is the damn footer. Because every good website needs a strong footing.<br />:-)
   </p>
 </div>
 

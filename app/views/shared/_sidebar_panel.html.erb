@@ -1,5 +1,5 @@
     <div class="sidebar panel">
-      <h4><i class="fa fa-calendar"></i>&nbsp;&nbsp;This Months</h4>
+      <h4><i class="fa fa-calendar"></i>&nbsp;&nbsp;This Month</h4>
       <table class="full_width_table">
         <tr data-tooltip title="Your total income for this month only." class="tip-right">
           <td>Income</td><td class="green"><%= number_to_currency(@total_income, :unit => "Rp ") %></td>
@@ -14,14 +14,14 @@
 
       <h4><i class="fa fa-money"></i>&nbsp;&nbsp;Residue</h4>
       <div class="panel">
-        <h5 data-tooltip title="Money left to spend. You can not spend more than what's left here." class="tip-right">
+        <h5 data-tooltip title="Money left to spend. You can not spend more than what's left here." class="tip-right green">
           <%= number_to_currency(@residue, :unit => "Rp ") %>
         </h5>
       </div>
 
       <h4><i class="fa fa-btc"></i>&nbsp;&nbsp;Net Worth</h4>
       <div class="panel">
-        <h5 data-tooltip title="Total money you own, including your savings." class="tip-right">
+        <h5 data-tooltip title="Total money you own, including your savings." class="tip-right blue">
           <%= number_to_currency(@total, :unit => "Rp ") %>
         </h5>
       </div>
