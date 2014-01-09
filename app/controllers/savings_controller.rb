@@ -63,7 +63,7 @@ class SavingsController < ApplicationController
     respond_to do |format|
       if @event.save
         @target_finish.destroy
-        format.html { redirect_to savings_index_path, notice: 'Target Savings was successfully finished.' }
+        format.html { redirect_to savings_index_path, notice: 'Target achieved! Expenses has been added automatically.' }
       else
         format.html { redirect_to savings_index_path, alert: 'Name already exist. Please specify another name.' }
       end

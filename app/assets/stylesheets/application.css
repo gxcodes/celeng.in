@@ -26,6 +26,7 @@ html {-webkit-font-smoothing: antialiased !important;}
 .target_amount {font-size: 0.7em; margin-top: -18px; margin-left: 10px; position: absolute;}
 .sidebar .target_amount {margin-top: -15px !important;}
 .sidebar h5 {font-weight: bolder;}
+.trophy {margin-top: -8px;}
 
 .alert-box.success {background-color: rgba(67,172,106,0.85) !important;}
 .alert-box.alert {background-color: rgba(240,65,36,0.85) !important;}
@@ -53,5 +54,5 @@ html {-webkit-font-smoothing: antialiased !important;}
 .timeline li i {position: absolute; display: block; margin-left: -43px;}
 .timeline .saving_time {position: absolute; display: block; margin-left: -145px; margin-top: -2px; font-size: small;}
 .timeline .saving_amount {font-weight: bolder;}
-.timeline p {margin-top: 20px !important;}
+.timeline p {margin-top: 15px !important;}
 
