@@ -8,6 +8,7 @@
       </div>
       <div class="small-9 columns">
         <%= text_field_tag 'name' %>
+        <small class="error">Name must be filled.</small>
       </div>
     </div>
 
@@ -22,6 +23,7 @@
           </div>
           <div class="small-9 large-10 columns">
             <%= number_field_tag 'amount_target', nil, placeholder: 'Enter amount...' %>
+            <small class="error">Amount must be filled.</small>
           </div>
         </div>
       </div>
@@ -33,6 +35,7 @@
       </div>
       <div class="small-9 columns">
         <%= text_field_tag 'deadline', nil, class: 'datepicker' %>
+        <small class="error">Deadline must be filled.</small>
       </div>
     </div>
 
