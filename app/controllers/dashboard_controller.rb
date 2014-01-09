@@ -17,6 +17,9 @@ class DashboardController < ApplicationController
     @total_saving       = current_user.events.by_month(m,year:y).sum('savings')
     @total_expenses     = current_user.events.by_month(m,year:y).sum('outcome')
     @total_month        = @total_income - @total_expenses
+
+
+    @events += @target_savings
   end
   
 end

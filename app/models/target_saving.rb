@@ -34,4 +34,8 @@ class TargetSaving < ActiveRecord::Base
   def finish
     self.events.each {|event| event.update(outcome: event.savings, savings: 0) }  
   end
+
+  def start_time
+    deadline
+  end
 end
