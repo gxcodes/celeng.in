@@ -35,11 +35,11 @@
         <li class="divider"></li>
         <li><%= link_to "#{current_user.username} (#{current_user.email})", edit_user_registration_path %></li>
         <li class="has-dropdown gravatar_image">
-          
+
           <%= link_to edit_user_registration_path do %>
             <%= image_tag current_user.gravatar_url %>
           <% end %>
-          
+
           <ul class="dropdown">
             <li><%= link_to edit_user_registration_path do %><i class="fa fa-user fa-lg"></i>&nbsp;&nbsp;Edit profile<% end %></li>
             <li><%= link_to destroy_user_session_path, method: :delete do %><i class="fa fa-sign-out fa-lg"></i>&nbsp;&nbsp;Logout<% end %></li>
@@ -110,6 +110,9 @@
 
     <%= yield %>
     <%= javascript_include_tag "application" %>
+    <script type="text/javascript">
+      $.backstretch("<%= asset_path 'cover.jpg' %>");
+    </script>
 
 <div id="footer" class="hide-for-small">
   <p class="text-center">
