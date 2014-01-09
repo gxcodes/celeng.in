@@ -57,12 +57,10 @@ class SavingsController < ApplicationController
   end
 
   def finish
-    @event = Event.new
-    @target_finish = TargetSaving.find(params[:id])
-    @event = @event.finish @target_finish, current_user 
+    @target = TargetSaving.find(params[:id])
     respond_to do |format|
-      if @event.save
-        @target_finish.destroy
+      if @target.finish
+        @target.update(completed: true)
         format.html { redirect_to savings_index_path, notice: 'Target achieved! Expenses has been added automatically.' }
       else
         format.html { redirect_to savings_index_path, alert: 'Name already exist. Please specify another name.' }

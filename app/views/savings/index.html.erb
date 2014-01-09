@@ -4,12 +4,17 @@
   </div>
 
   <div class="large-9 medium-8 columns">
+
+  <div class="row"> <!-- Row pertama -->
+  <div class="large-12 columns">
+  <% @target_savings_completed    = @target_savings.all.select {|target| target.completed == true} %>
+  <% @target_savings_uncompleted  = @target_savings.all.select {|target| target.completed == false} %>
   <h2>Target Savings</h2>
   <h4>This is your target savings list. Make sure you save some money to reach your dreams!</h4>
       <br />
-      <% if @target_savings != [] %>
+      <% if @target_savings_uncompleted != [] %>
         <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
-        <% @target_savings.each do |target_saving| %>
+        <% @target_savings_uncompleted.each do |target_saving| %>
           <li>
             <% if target_saving.images_url %>
             <%= image_tag target_saving.images_url(:thumb).to_s, class: 'saving_image' %>
@@ -23,12 +28,10 @@
               <%= link_to saving_url(target_saving), method: :delete, data: { confirm: 'Target Saving will be deleted. Are you sure?' }, class: 'right pull_h10' do %><i class="fa fa-times-circle fa-lg tip-right" data-tooltip title="Delete Target"></i><% end %>
 
               <%= link_to edit_saving_url(target_saving), data: {reveal_id: "editSavingModal"}, class: 'right edit' do %><i class="fa fa-pencil fa-lg tip-right" data-tooltip title="Edit Target"></i><% end %>
-
               <div class="progress round push_v10">
                 <span class="meter" style="width: <%= target_saving.jumlah.to_f/target_saving.amount_target.to_f*100 %>%"></span>
                 <span class="target_amount"><%= number_to_currency(target_saving.jumlah || 0, :unit => "Rp ") %> / <%= number_to_currency(target_saving.amount_target, :unit => "Rp ") %></span>
               </div>
-
               <table class="full_width_table">
                 <tr>
                   <td>Deadline</td><td><%= target_saving.deadline.strftime("%d %B %Y") %></td>
@@ -47,5 +50,50 @@
       <% else %>
       <p>You don't have any target savings! Why don't you make one now..</p>
       <% end %>
-  </div>
+      </div>
+    </div> <!-- row pertama -->
+
+<div class="row"> <!-- Row kedua -->
+  <div class="large-12 columns">
+  <h2>Target Savings</h2>
+  <h4>This is your target savings list. Make sure you save some money to reach your dreams!</h4>
+      <br />
+      <% if @target_savings_completed != [] %>
+        <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+        <% @target_savings_completed.each do |target_saving| %>
+          <li>
+            <% if target_saving.images_url %>
+            <%= image_tag target_saving.images_url(:thumb).to_s, class: 'saving_image' %>
+            <% else %>
+            <img src="http://placehold.it/480x320&text=<%= target_saving.name %>">
+            <% end %>
+            
+            <div class="panel">
+              <a href=<%= saving_events_url(target_saving) %> class="tip-right" data-tooltip title="View target saving history"><%= target_saving.name %></a>
+
+              <%= link_to saving_url(target_saving), method: :delete, data: { confirm: 'Target Saving will be deleted. Are you sure?' }, class: 'right pull_h10' do %><i class="fa fa-times-circle fa-lg tip-right" data-tooltip title="Delete Target"></i><% end %>
+
+              <%= link_to edit_saving_url(target_saving), data: {reveal_id: "editSavingModal"}, class: 'right edit' do %><i class="fa fa-pencil fa-lg tip-right" data-tooltip title="Edit Target"></i><% end %>
+              <p>Completed</p>
+              <table class="full_width_table">
+                <tr>
+                  <td>Deadline</td><td><%= target_saving.deadline.strftime("%d %B %Y") %></td>
+                </tr>
+                <tr>
+                  <td>Price</td><td><%= number_to_currency(target_saving.amount_target, :unit => "Rp ") %></td>
+                </tr>
+                <tr>
+                  <td>Description</td><td><%= target_saving.description %></td>
+                </tr>
+              </table>
+            </div>
+          </li>
+        <% end %>
+        </ul>
+      <% else %>
+      <p>You don't have any target savings! Why don't you make one now..</p>
+      <% end %>
+      </div>
+    </div> <!-- row kedua -->
+  </div> <!-- Kolom kedua -->
 </div>

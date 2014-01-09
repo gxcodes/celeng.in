@@ -11,14 +11,14 @@ class Event < ActiveRecord::Base
     
     if param[:transaksi] == "add_income" 
       @event.income     = param[:amount].to_i
-      @event.name       = "Add Income"
+      @event.name       = "Income: #{param[:name]}"
     elsif param[:transaksi] == "add_outcome"
       @event.outcome    = param[:amount].to_i
-      @event.name       = "Add Expenses"
+      @event.name       = "Expenses: #{param[:name]}"
     elsif param[:transaksi] == "add_saving"
       @event.target_saving_id = param[:target][:target_savings]
       @event.savings    = param[:amount].to_i
-      @event.name       = "Add Savings"
+      @event.name       = "Savings: #{TargetSaving.find_by_id(param[:target][:target_savings]).name}"
     end
     @event.start_time   = param[:date]
     @event.user         = current_user

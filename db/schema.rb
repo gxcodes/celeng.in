@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140106063730) do
+ActiveRecord::Schema.define(version: 20140109093420) do
 
   create_table "events", force: true do |t|
     t.string   "name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20140106063730) do
     t.date     "deadline"
     t.integer  "user_id"
     t.string   "images"
+    t.boolean  "completed",     default: false
   end
 
   create_table "users", force: true do |t|

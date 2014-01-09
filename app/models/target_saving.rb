@@ -1,6 +1,6 @@
 class TargetSaving < ActiveRecord::Base
   belongs_to :user
-  has_many :events, dependent: :destroy
+  has_many :events
   mount_uploader :images, ImagesUploader
 
   validates :name, uniqueness: {scope: :user_id}, presence: true
@@ -29,5 +29,9 @@ class TargetSaving < ActiveRecord::Base
       target_saving.images        = params['images']
       target_saving 
     end
+  end
+
+  def finish
+    self.events.each {|event| event.update(outcome: event.savings, savings: 0) }  
   end
 end

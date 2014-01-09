@@ -27,8 +27,9 @@
       </div>
 
       <h4><i class="fa fa-shopping-cart"></i>&nbsp;&nbsp;Target Savings</h4>      
-      <% if @target_savings != [] %>
-        <% @target_savings.each do |target_saving| %>
+      <% @target_uncompleted = @target_savings.all.select {|target| target.completed == false} %>
+      <% if @target_uncompleted != [] %>
+        <% @target_uncompleted.each do |target_saving| %>
           <div class="panel">
             <a href=<%= saving_events_url(target_saving) %> class="tip-right" data-tooltip title="View target saving history"><%= target_saving.name %></a>
             <% if target_saving.jumlah == target_saving.amount_target %>
