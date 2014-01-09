@@ -5,7 +5,6 @@ class Event < ActiveRecord::Base
 
   validates :income, presence:true
   validates :outcome, presence:true
-  validates :outcome, presence:true
 
   def self.add param, current_user
     @event = Event.new
@@ -35,7 +34,7 @@ class Event < ActiveRecord::Base
       false
     end
   end
-  
+
   def finish target, current_user
     self.outcome      = target.amount_target
     self.name         = "Add Expenses"
