@@ -18,7 +18,7 @@
           <i class="fa fa-dot-circle-o fa-lg"></i>
           <span class="saving_time"><%= event.start_time.strftime("%d %B %Y") %></span>
           <span class="saving_name blue">Add Savings </span>
-          <span class="saving_amount green"><%= number_to_currency(event.savings, :unit => "Rp ") %></span>
+          <span class="saving_amount green"><%= number_to_currency(event.amount, :unit => "Rp ") %></span>
           <p><%= event.description %></p>
         </li>
         <% end %>
