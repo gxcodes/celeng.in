@@ -44,6 +44,7 @@ $( document ).ready( function(){
     }
     if($(this).attr('id') == 'transaksi_add_outcome' || $(this).attr('id') == 'transaksi_add_income'){
       $( "#select_saving" ).hide('fast');
+      $( "#name_events" ).show('fast');
     }
   });
 
