@@ -21,6 +21,10 @@ class ApplicationController < ActionController::Base
     @total_month        = @total_income - @total_expenses
   end
 
+  def after_sign_in_path_for(user)
+    dashboard_index_path
+  end
+
   protected
 
   def configure_permitted_parameters
