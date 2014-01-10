@@ -31,6 +31,7 @@ html {-webkit-font-smoothing: antialiased !important;}
 .alert-box.success {background-color: rgba(67,172,106,0.85) !important;}
 .alert-box.alert {background-color: rgba(240,65,36,0.85) !important;}
 
+.orange {color: orange;}
 .green {color: rgb(67,172,106) !important;}
 .blue {color: rgb(0,140,186) !important;}
 .red {color: rgb(240,65,36) !important;}
@@ -46,11 +47,12 @@ html {-webkit-font-smoothing: antialiased !important;}
 /*
  * Timeline Style
  */
-.timeline {list-style-type: none; background: url(timeline.jpg) top left repeat-y; margin-left: 150px;}
+.timeline {list-style-type: none; background: url(timeline.jpg) top left repeat-y; margin-left: 150px; margin-top: 20px;}
 .timeline li.panel {width: 40%;}
 .timeline li {margin-left: 15px;}
 .timeline li i {position: absolute; display: block; margin-left: -43px;}
 .timeline .saving_time {position: absolute; display: block; margin-left: -145px; margin-top: -2px; font-size: small;}
 .timeline .saving_amount {font-weight: bolder;}
 .timeline p {margin-top: 15px !important;}
-
+.timeline li.saving_deadline {text-align:center; width:180px; height:90px; margin-left:0; margin-top: -20px;}
+.timeline li.saving_deadline i {margin-left:-50px; margin-top:15px;}

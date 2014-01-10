@@ -5,6 +5,7 @@ class EventsController < ApplicationController
     target_saving = TargetSaving.find_by_id params[:saving_id]
     @events = target_saving.events.order(start_time: :desc)
     @target_saving_name =  target_saving.name
+    @target_saving_deadline = target_saving.deadline
   end
 
   def new
