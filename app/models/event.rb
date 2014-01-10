@@ -50,4 +50,15 @@ class Event < ActiveRecord::Base
     self.description  = "Buy "+target.name
     self
   end
+
+  def amount
+    # income > 0 ? income : (outcome > 0 ? outcome : savings )
+    if income > 0
+      income
+    elsif outcome > 0
+      outcome
+    else
+       savings 
+    end
+  end
 end
