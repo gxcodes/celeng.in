@@ -10,9 +10,9 @@
   <% @target_savings_completed    = @target_savings.all.select {|target| target.completed == true} %>
   <% @target_savings_uncompleted  = @target_savings.all.select {|target| target.completed == false} %>
   <h2>Target Savings</h2>
-  <h4>This is your target savings list. Make sure you save some money to reach your dreams!</h4>
-      <br />
       <% if @target_savings_uncompleted != [] %>
+      <h4>This is your target savings list. Make sure you save some money to reach your dreams!</h4>
+      <br />
         <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
         <% @target_savings_uncompleted.each do |target_saving| %>
           <li>
@@ -57,9 +57,9 @@
 <div class="row"> <!-- Row kedua -->
   <div class="large-12 columns">
   <h2>Completed Target Savings</h2>
-  <h4>Congratulation! Goals that have been reached will be placed here.</h4>
-      <br />
       <% if @target_savings_completed != [] %>
+      <h4>Congratulation! Goals that have been reached will be placed here.</h4>
+      <br />
         <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
         <% @target_savings_completed.each do |target_saving| %>
           <li>

@@ -6,6 +6,7 @@ class EventsController < ApplicationController
     @events = target_saving.events.order(start_time: :desc)
     @target_saving_name =  target_saving.name
     @target_saving_deadline = target_saving.deadline
+    @target_saving_completed = target_saving.date_completed
   end
 
   def new

@@ -54,5 +54,5 @@ html {-webkit-font-smoothing: antialiased !important;}
 .timeline .saving_time {position: absolute; display: block; margin-left: -145px; margin-top: -2px; font-size: small;}
 .timeline .saving_amount {font-weight: bolder;}
 .timeline p {margin-top: 15px !important;}
-.timeline li.saving_deadline {text-align:center; width:180px; height:90px; margin-left:0; margin-top: -20px;}
+.timeline li.saving_deadline {text-align:center; width:180px; margin-left:0; margin-top: -20px;}
 .timeline li.saving_deadline i {margin-left:-50px; margin-top:15px;}

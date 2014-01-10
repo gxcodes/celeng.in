@@ -12,6 +12,10 @@
           <i class="fa fa-fighter-jet fa-lg"></i>
           <span>Deadline:</span><br />
           <span class="orange"><%= @target_saving_deadline.strftime("%d %B %Y") %></span>
+          <% if @target_saving_completed != nil %>
+          <span>Completed:</span><br />
+          <span class="green"><%= @target_saving_completed.strftime("%d %B %Y") %></span>
+          <% end %>
         </li>
         <% @events.each do |event| %>
         <li class="panel">
