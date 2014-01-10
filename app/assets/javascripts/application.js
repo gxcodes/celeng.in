@@ -32,19 +32,21 @@ $(function() {
 $( document ).ready( function(){
   $.backstretch("/assets/cover.jpg");
 
-  $("td" ).click( function() {
-    var date = $( this ).attr( "data-date" );
+  $("td").click( function() {
+    var date = $( this ).attr("data-date");
     $('input.date').val(date);
   });
 
   $("input.transaction-type").on("click", function(){
     if($(this).attr('id') == 'transaksi_add_saving'){
-      $( "#select_saving" ).show('fast');
-      $( "#name_events" ).hide('fast');
+      $("#select_saving").show('fast');
+      $("#name_events").hide('fast');
+      $("input#name").removeAttr('required');
     }
     if($(this).attr('id') == 'transaksi_add_outcome' || $(this).attr('id') == 'transaksi_add_income'){
-      $( "#select_saving" ).hide('fast');
-      $( "#name_events" ).show('fast');
+      $("#select_saving").hide('fast');
+      $("#name_events").show('fast');
+      $("input#name").attr('required', 'true');
     }
   });
 
