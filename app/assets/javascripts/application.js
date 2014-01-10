@@ -30,8 +30,6 @@ $(function() {
 });
 
 $( document ).ready( function(){
-  $.backstretch("/assets/cover.jpg");
-
   $("td").click( function() {
     var date = $( this ).attr("data-date");
     $('input.date').val(date);
