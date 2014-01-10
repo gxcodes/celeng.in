@@ -36,7 +36,11 @@ class TargetSaving < ActiveRecord::Base
   end
 
   def start_time
-    deadline
+    if date_completed == nil
+      deadline
+    else
+      date_completed
+    end
   end
   def amount
     amount_target

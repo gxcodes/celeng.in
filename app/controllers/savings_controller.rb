@@ -54,7 +54,7 @@ class SavingsController < ApplicationController
     @target = TargetSaving.find(params[:id])
     respond_to do |format|
       if @target.finish
-        @target.update(completed: true, deadline: Time.now, name: "Expenses: #{@target.name}")
+        @target.update(completed: true, date_completed: Time.now, name: "Expenses: #{@target.name}")
         format.html { redirect_to savings_index_path, notice: 'Target achieved! Expenses has been added automatically.' }
       else
         format.html { redirect_to savings_index_path, alert: 'Name already exist. Please specify another name.' }
