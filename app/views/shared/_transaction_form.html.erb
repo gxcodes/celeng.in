@@ -13,15 +13,17 @@
   </div>
   <fieldset>
     <legend>Transaction : </legend>
-    <div id="name_events">
-    <%= text_field_tag 'name', nil, placeholder: 'Name...' %>
-    <!-- <small class="error">Name must be filled.</small> -->
-    </div>
+
     <%= radio_button_tag 'transaksi', 'add_income', false, class: 'transaction-type' %><%= label_tag 'transaksi_add_income', 'Add Income' %>
     <%= radio_button_tag 'transaksi', 'add_outcome', false, class: 'transaction-type' %><%= label_tag 'transaksi_add_outcome', 'Add Expenses' %>
     <%= radio_button_tag 'transaksi', 'add_saving', false, class: 'transaction-type' %><%= label_tag 'transaksi_add_saving', 'Add Savings' %>
 
     <br />
+    <div id="name_events">
+      <%= text_field_tag 'name', nil, placeholder: 'Name...' %>
+      <!-- <small class="error">Name must be filled.</small> -->
+    </div>
+
     <div id="select_saving" class="hide">
       <%= collection_select(:target, :target_savings, @target_savings, :id, :name) %>
     </div>
