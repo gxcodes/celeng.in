@@ -28,7 +28,7 @@ gem 'capistrano', '~> 3.0.0'
 gem 'capistrano-bundler', '~> 1.0.0'
 gem 'capistrano-rails', '~> 1.0.0'
 gem 'capistrano-rvm', github: "capistrano/rvm"
-gem "unicorn"
+# gem "unicorn"
 # Dikomen dulu soalnya jadi ga bisa bundle install under windows
 # group :production, :test do
 #   gem 'unicorn'
