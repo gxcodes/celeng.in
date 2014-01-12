@@ -1,9 +1,9 @@
 rails_env = ENV['RAILS_ENV'] || 'production'
 
-working_directory "/home/akademirails/celeng.in/current"
-pid "/home/akademirails/celeng.in/shared/tmp/pids/unicorn.pid"
-stderr_path "/home/akademirails/celeng.in/shared/log/unicorn.log"
-stdout_path "/home/akademirails/celeng.in/shared/log/unicorn.log"
+working_directory "/home/celenging/current"
+pid "/home/celenging/shared/tmp/pids/unicorn.pid"
+stderr_path "/home/celenging/shared/log/unicorn.log"
+stdout_path "/home/celenging/shared/log/unicorn.log"
 
 listen "/tmp/unicorn.celeng.in.sock"
 worker_processes 2
