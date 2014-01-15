@@ -1,7 +1,7 @@
 set :application, 'celeng.in'
 set :repo_url, 'git@github.com:gxcodes/celeng.in.git'
 set :branch, "aji_deploy"
-set :deploy_to, '/home/celenging'
+set :deploy_to, '/home/celenging/application'
 set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
